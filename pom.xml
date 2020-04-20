@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.qveo</groupId>
-	<artifactId>qveoweb</artifactId>
+	<artifactId>qveoweb2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>qveoweb</name>
