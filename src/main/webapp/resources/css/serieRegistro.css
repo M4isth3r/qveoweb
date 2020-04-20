@@ -1,0 +1,14 @@
+.border{
+	border: 2px solid white;
+	padding: 4px;
+}
+
+.fondo{
+	color: red;
+}
+.generoName {
+	padding-left: 2%;
+}
+select {
+	visibility: visible;
+}
