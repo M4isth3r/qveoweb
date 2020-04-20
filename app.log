@@ -16,3 +16,43 @@
 2020-04-20 18:48:06,751 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-04-20 18:48:12,811 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
 2020-04-20 18:48:12,817 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-04-20 19:30:46,453 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on pepino with PID 6127 (/home/yuriy/Proyectos/qveoweb/target/classes started by yuriy in /home/yuriy/Proyectos/qveoweb)
+2020-04-20 19:30:46,455 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-04-20 19:30:46,456 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-20 19:30:48,005 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-20 19:30:48,006 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 19:30:48,344 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-20 19:30:48,351 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-20 19:30:48,521 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-20 19:30:49,036 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-20 19:30:49,088 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-20 19:30:49,149 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-20 19:30:49,301 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-20 19:30:49,438 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-20 19:30:50,542 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-20 19:30:51,685 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 5.757 seconds (JVM running for 6.326)
+2020-04-20 19:31:07,586 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 19:31:07,631 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-2] Executing home() method via Get
+2020-04-20 19:31:45,017 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-04-20 19:31:45,023 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-04-20 19:32:54,309 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on pepino with PID 6384 (/home/yuriy/Proyectos/qveoweb/target/classes started by yuriy in /home/yuriy/Proyectos/qveoweb)
+2020-04-20 19:32:54,313 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-04-20 19:32:54,314 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-20 19:32:55,879 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-20 19:32:55,879 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 19:32:56,189 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-20 19:32:56,193 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-20 19:32:56,343 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-20 19:32:56,894 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-20 19:32:56,945 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-20 19:32:57,012 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-20 19:32:57,174 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-20 19:32:57,304 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-20 19:32:58,420 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-20 19:32:59,656 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 5.879 seconds (JVM running for 6.421)
+2020-04-20 19:33:32,736 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 19:33:32,783 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via Get
+2020-04-20 19:33:33,917 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via Get
+2020-04-20 19:33:33,935 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-7] Executing home() method via Get
+2020-04-20 19:35:06,412 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-04-20 19:35:06,420 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
