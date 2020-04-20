@@ -1,0 +1,18 @@
+2020-04-20 18:47:52,473 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on pepino with PID 1814 (/home/yuriy/Proyectos/qveoweb/target/classes started by yuriy in /home/yuriy/Proyectos/qveoweb)
+2020-04-20 18:47:52,476 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-04-20 18:47:52,477 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-20 18:47:53,997 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-20 18:47:53,998 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-20 18:47:54,301 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-20 18:47:54,307 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-20 18:47:54,469 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-20 18:47:55,020 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-20 18:47:55,071 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-20 18:47:55,135 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-20 18:47:55,307 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-20 18:47:55,442 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-20 18:47:55,682 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-20 18:47:56,278 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 4.323 seconds (JVM running for 4.913)
+2020-04-20 18:48:06,751 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-20 18:48:12,811 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-04-20 18:48:12,817 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
