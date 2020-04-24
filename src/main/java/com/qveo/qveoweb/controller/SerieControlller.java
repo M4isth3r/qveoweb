@@ -120,14 +120,36 @@ public class SerieControlller {
 		
 		if(br.hasErrors()) {
 			System.out.println(br.getAllErrors());
-			return "redirect:/serie/form";
+			System.out.println("p");
+			return "redirect:/serie/edit/{id}";
 		}
 		
-		//serieService.editarSerie(serieAct);
-		//String titulo=serieNew.getTitulo();
+		try {
+		if(file.isEmpty()) {
+			String extesion="";
+			serieService.editarSerie(serieAct,false,extesion);
+			System.out.println("Entras aqui si fiechero vacio");
+		}else {
+			System.out.println("Entras aqui si no esta vacio");
+			String titulo=serieAct.getTitulo();
+			String extesion=serieService.obtenerExtension(file);
+			serieService.editarSerie(serieAct,true, extesion);
+			serieService.saveImg(file, titulo,true);	
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		//serieService.actImg(file, titulo);
 		
-		return "redirect:/serie/{id}";
+		return "redirect:/serie/list";
+	}
+	@GetMapping("/serie/delete/{id}")
+	public String deleteSerie(@PathVariable("id") Integer id) {
+		
+		serieService.deleteSerie(id);
+		return "redirect:/serie/list";
 	}
 	
 }
