@@ -2,38 +2,47 @@ package com.qveo.qveoweb.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class PeliculaPlataformaId implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	private Integer peliculaId;
-	private Integer plataformaId;
+
+	@Column(name = "ID_PELICULA")
+	private Long peliculaId;
+	
+	@Column(name = "ID_PLATAFORMA")
+	private Long plataformaId;
 	
 	public PeliculaPlataformaId() {
 		
 	}
-	public PeliculaPlataformaId(Integer peliculaId, Integer plataformaId) {
+	public PeliculaPlataformaId(Long peliculaId, Long plataformaId) {
 		this.peliculaId = peliculaId;
 		this.plataformaId = plataformaId;
 	}
-	public Integer getPeliculaId() {
+	public Long getPeliculaId() {
 		return peliculaId;
 	}
-	public void setPeliculaId(Integer peliculaId) {
+	public void setPeliculaId(Long peliculaId) {
 		this.peliculaId = peliculaId;
 	}
-	public Integer getPlataformaId() {
+	public Long getPlataformaId() {
 		return plataformaId;
 	}
-	public void setPlataformaId(Integer plataformaId) {
+	public void setPlataformaId(Long plataformaId) {
 		this.plataformaId = plataformaId;
 	}
-
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((peliculaId == null) ? 0 : peliculaId.hashCode());
+		result = prime * result + ((plataformaId == null) ? 0 : plataformaId.hashCode());
+		return result;
+	}
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

@@ -18,6 +18,7 @@
 <main>
     <!-- 		<div class="row"> -->
     <!-- 		<div class="row"></div> -->
+    <!--  
 	<c:forEach items="${plataformas}" var="plataforma">
     <div class="row">
         <div class="col s12">
@@ -42,7 +43,7 @@
     </div>
 	</c:forEach>
 
-
+-->
 </main>
 <footer>
     <%@include file="/WEB-INF/views/layout/footer.jsp" %>

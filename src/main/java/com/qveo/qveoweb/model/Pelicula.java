@@ -5,7 +5,9 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Pelicula {
@@ -21,10 +23,12 @@ public class Pelicula {
     private Pais pais;
     private Collection<Director> directores;
     private Collection<Usuario> usuarios;
+    
     @OneToMany(mappedBy = "pelicula")
-    private List<PeliculaPlataforma> peliculaPlataformas = new ArrayList<>();
+    private Set<PeliculaPlataforma> peliculaPlataformas;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     public Integer getId() {
         return id;
@@ -146,11 +150,13 @@ public class Pelicula {
         this.directores = directores;
     }
     
-    public List<PeliculaPlataforma> getPeliculaPlataformas() {
+
+
+	public Set<PeliculaPlataforma> getPeliculaPlataformas() {
 		return peliculaPlataformas;
 	}
 
-	public void setPeliculaPlataformas(List<PeliculaPlataforma> peliculaPlataformas) {
+	public void setPeliculaPlataformas(Set<PeliculaPlataforma> peliculaPlataformas) {
 		this.peliculaPlataformas = peliculaPlataformas;
 	}
 

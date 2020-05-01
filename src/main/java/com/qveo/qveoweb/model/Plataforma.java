@@ -4,19 +4,29 @@ import javax.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
 public class Plataforma {
+	
     private Integer id;
     private String nombre;
     private Collection<Serie> series;
     private Collection<Usuario> usuarios;
+    
     @OneToMany(mappedBy = "plataforma")
-    private List<PeliculaPlataforma> peliculaPlataformas = new ArrayList<>();
+    private Set<PeliculaPlataforma> peliculaPlataformas;
 
-    @Id
+    
+    
+    public Plataforma() {
+	}
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     public Integer getId() {
         return id;
@@ -37,11 +47,11 @@ public class Plataforma {
     }
 
 
-    public List<PeliculaPlataforma> getPeliculaPlataformas() {
+	public Set<PeliculaPlataforma> getPeliculaPlataformas() {
 		return peliculaPlataformas;
 	}
 
-	public void setPeliculaPlataformas(List<PeliculaPlataforma> peliculaPlataformas) {
+	public void setPeliculaPlataformas(Set<PeliculaPlataforma> peliculaPlataformas) {
 		this.peliculaPlataformas = peliculaPlataformas;
 	}
 
