@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
+/*
 @Service
 public class PeliculaServiceImpl implements PeliculaService {
 
@@ -36,7 +36,9 @@ public class PeliculaServiceImpl implements PeliculaService {
                     .filter(pelicula -> pelicula.getPlataformas().contains(plataforma))
                     .collect(Collectors.toList()));
         });
-
+        
+        //return null;
         return plataformaListMap;
     }
-}
+  
+*/
