@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 
 @Entity
@@ -12,8 +13,8 @@ public class Plataforma {
     private String nombre;
     private Collection<Serie> series;
     private Collection<Usuario> usuarios;
-    @OneToMany(mappedBy = "pelicula")
-    private Collection<PeliculaPlataforma> peliculaPlataformas;
+    @OneToMany(mappedBy = "plataforma")
+    private List<PeliculaPlataforma> peliculaPlataformas = new ArrayList<>();
 
     @Id
     @Column(name = "ID")
@@ -36,11 +37,11 @@ public class Plataforma {
     }
 
 
-    public Collection<PeliculaPlataforma> getPeliculaPlataformas() {
+    public List<PeliculaPlataforma> getPeliculaPlataformas() {
 		return peliculaPlataformas;
 	}
 
-	public void setPeliculaPlataformas(Collection<PeliculaPlataforma> peliculaPlataformas) {
+	public void setPeliculaPlataformas(List<PeliculaPlataforma> peliculaPlataformas) {
 		this.peliculaPlataformas = peliculaPlataformas;
 	}
 

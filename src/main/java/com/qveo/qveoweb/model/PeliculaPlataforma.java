@@ -15,6 +15,8 @@ public class PeliculaPlataforma {
 	@EmbeddedId
 	private PeliculaPlataformaId id = new PeliculaPlataformaId();
 	
+	@Basic
+    @Column(name = "CADUCA")
 	private Date fechaCaducidad;
 	
 	@ManyToOne
@@ -25,8 +27,7 @@ public class PeliculaPlataforma {
 	@MapsId("peliculaId")
 	private Pelicula pelicula;
 	
-	@Basic
-    @Column(name = "CADUCA")
+	
 	public Date getFechaCaducidad() {
 		return fechaCaducidad;
 	}

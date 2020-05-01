@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Pelicula {
@@ -20,8 +21,8 @@ public class Pelicula {
     private Pais pais;
     private Collection<Director> directores;
     private Collection<Usuario> usuarios;
-    @OneToMany(mappedBy = "plataforma")
-    private Collection<PeliculaPlataforma> peliculaPlataformas = new ArrayList<>();
+    @OneToMany(mappedBy = "pelicula")
+    private List<PeliculaPlataforma> peliculaPlataformas = new ArrayList<>();
 
     @Id
     @Column(name = "ID")
@@ -145,11 +146,11 @@ public class Pelicula {
         this.directores = directores;
     }
     
-    public Collection<PeliculaPlataforma> getPeliculaPlataformas() {
+    public List<PeliculaPlataforma> getPeliculaPlataformas() {
 		return peliculaPlataformas;
 	}
 
-	public void setPeliculaPlataformas(Collection<PeliculaPlataforma> peliculaPlataformas) {
+	public void setPeliculaPlataformas(List<PeliculaPlataforma> peliculaPlataformas) {
 		this.peliculaPlataformas = peliculaPlataformas;
 	}
 
