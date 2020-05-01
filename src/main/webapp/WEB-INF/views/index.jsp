@@ -5,6 +5,7 @@
     <title>QVeo web</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/resources/css/materialize.css">
     <link rel="stylesheet"
@@ -18,7 +19,7 @@
 <main>
     <!-- 		<div class="row"> -->
     <!-- 		<div class="row"></div> -->
-    <!--  
+ 
 	<c:forEach items="${plataformas}" var="plataforma">
     <div class="row">
         <div class="col s12">
@@ -42,14 +43,14 @@
         </div>
     </div>
 	</c:forEach>
-
--->
 </main>
 <footer>
     <%@include file="/WEB-INF/views/layout/footer.jsp" %>
 </footer>
 
 </body>
+ <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script
         src="${pageContext.request.contextPath}/resources/js/materialize.js"></script>
 <script

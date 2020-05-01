@@ -16,29 +16,20 @@ import javax.persistence.MapsId;
 @Entity
 public class PeliculaPlataforma {
 	
-	@EmbeddedId
+	
 	private PeliculaPlataformaId id = new PeliculaPlataformaId();
-	
-	
-    @Column(name = "CADUCA")
+
 	private Date fechaCaducidad;
-	
-	
-	@ManyToOne
-	@MapsId("plataformaId")
-	@JoinColumn(name = "ID_PLATAFORMA")
+
 	private Plataforma plataforma;
-	
-	
-	@ManyToOne
-	@MapsId("peliculaId")
-	@JoinColumn(name = "ID_PELICULA")
+
 	private Pelicula pelicula;
 	
 	
 	public PeliculaPlataforma() {
 	}
-
+	
+	@Column(name = "CADUCA")
 	public Date getFechaCaducidad() {
 		return fechaCaducidad;
 	}
@@ -46,7 +37,8 @@ public class PeliculaPlataforma {
 	public void setFechaCaducidad(Date fechaCaducidad) {
 		this.fechaCaducidad = fechaCaducidad;
 	}
-
+	
+	@EmbeddedId
 	public PeliculaPlataformaId getId() {
 		return id;
 	}
@@ -54,7 +46,10 @@ public class PeliculaPlataforma {
 	public void setId(PeliculaPlataformaId id) {
 		this.id = id;
 	}
-
+	
+	@ManyToOne
+	@MapsId("plataformaId")
+	@JoinColumn(name = "ID_PLATAFORMA")
 	public Plataforma getPlataforma() {
 		return plataforma;
 	}
@@ -62,7 +57,10 @@ public class PeliculaPlataforma {
 	public void setPlataforma(Plataforma plataforma) {
 		this.plataforma = plataforma;
 	}
-
+	
+	@ManyToOne
+	@MapsId("peliculaId")
+	@JoinColumn(name = "ID_PELICULA")
 	public Pelicula getPelicula() {
 		return pelicula;
 	}

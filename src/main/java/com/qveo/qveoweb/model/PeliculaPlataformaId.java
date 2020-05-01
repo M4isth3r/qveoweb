@@ -10,10 +10,10 @@ public class PeliculaPlataformaId implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	@Column(name = "ID_PELICULA")
+	
 	private Long peliculaId;
 	
-	@Column(name = "ID_PLATAFORMA")
+	
 	private Long plataformaId;
 	
 	public PeliculaPlataformaId() {
@@ -23,12 +23,14 @@ public class PeliculaPlataformaId implements Serializable {
 		this.peliculaId = peliculaId;
 		this.plataformaId = plataformaId;
 	}
+	@Column(name = "ID_PELICULA")
 	public Long getPeliculaId() {
 		return peliculaId;
 	}
 	public void setPeliculaId(Long peliculaId) {
 		this.peliculaId = peliculaId;
 	}
+	@Column(name = "ID_PLATAFORMA")
 	public Long getPlataformaId() {
 		return plataformaId;
 	}

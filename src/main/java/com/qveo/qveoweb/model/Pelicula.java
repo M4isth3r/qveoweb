@@ -23,9 +23,7 @@ public class Pelicula {
     private Pais pais;
     private Collection<Director> directores;
     private Collection<Usuario> usuarios;
-    
-    @OneToMany(mappedBy = "pelicula")
-    private Set<PeliculaPlataforma> peliculaPlataformas;
+    private Set<PeliculaPlataforma> peliculaPlataformas = new HashSet<PeliculaPlataforma>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -151,7 +149,7 @@ public class Pelicula {
     }
     
 
-
+    @OneToMany(mappedBy = "pelicula")
 	public Set<PeliculaPlataforma> getPeliculaPlataformas() {
 		return peliculaPlataformas;
 	}

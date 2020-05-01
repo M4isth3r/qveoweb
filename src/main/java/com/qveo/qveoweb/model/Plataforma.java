@@ -15,10 +15,8 @@ public class Plataforma {
     private Integer id;
     private String nombre;
     private Collection<Serie> series;
-    private Collection<Usuario> usuarios;
-    
-    @OneToMany(mappedBy = "plataforma")
-    private Set<PeliculaPlataforma> peliculaPlataformas;
+    private Collection<Usuario> usuarios;   
+    private Set<PeliculaPlataforma> peliculaPlataformas = new HashSet<PeliculaPlataforma>();
 
     
     
@@ -46,7 +44,7 @@ public class Plataforma {
         this.nombre = nombre;
     }
 
-
+    @OneToMany(mappedBy = "plataforma")
 	public Set<PeliculaPlataforma> getPeliculaPlataformas() {
 		return peliculaPlataformas;
 	}
