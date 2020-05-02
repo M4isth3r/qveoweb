@@ -12,10 +12,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 import javax.validation.Valid;
+
+import com.qveo.qveoweb.model.Pais;
+import com.qveo.qveoweb.model.Plataforma;
 import com.qveo.qveoweb.model.Usuario;
+import com.qveo.qveoweb.service.PaisService;
+import com.qveo.qveoweb.service.PlataformaService;
 import com.qveo.qveoweb.service.UsuarioService;
+import java.io.IOException;
 
-
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class UsuarioController {
@@ -23,59 +30,87 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 
-	@RequestMapping(value="/usuario/list", method=RequestMethod.GET)
-	public String listarUsuarios(Model modelo){
+	@Autowired
+	private PaisService paisService;
+
+	@Autowired
+	private PlataformaService plataformaService;
+
+	@RequestMapping(value = "/usuario/list", method = RequestMethod.GET)
+	public String listarUsuarios(Model modelo) {
 
 		List<Usuario> usuarios = usuarioService.findAllUsuarios();
 
 		modelo.addAttribute("usuarios", usuarios);
 
-		return "listaUsuarios";
+		return "usuario/lista";
 	}
 
-	@RequestMapping(value="/usuario/form", method=RequestMethod.GET)
-	public String mostrarFormulario(Model modelo) {
+	@RequestMapping(value = "/usuario/form", method = RequestMethod.GET)
+	public String mostrarFormulario(Model model) {
 
-		modelo.addAttribute("nuevoUsuario", new Usuario());
+		model.addAttribute("nuevoUsuario", new Usuario());
 
-		return "registro";
+		List<Pais> paises = paisService.getAllPais();
+		model.addAttribute("paises", paises);
+
+		List<Plataforma> plataformas = plataformaService.getAllPlataformas();
+		model.addAttribute("plataformas", plataformas);
+
+		return "usuario/registro";
 	}
 
-	@RequestMapping(value="/usuario/form/add",method=RequestMethod.POST)
-	public String addUser(@Valid @ModelAttribute("nuevoUsuario") Usuario usuario,
-			BindingResult br) {
+	@RequestMapping(value = "/usuario/form/add", method = RequestMethod.POST)
+	public String addUser(@Valid @ModelAttribute("nuevoUsuario") Usuario usuario, BindingResult br,
+			@RequestParam(value = "file") MultipartFile file, Model model) {
+		try {
+			if (br.hasErrors()) {
+				System.out.println(br.getAllErrors());
+				List<Pais> paises = paisService.getAllPais();
+				model.addAttribute("paises", paises);
 
-		if(br.hasErrors()) return "registro";
+				List<Plataforma> plataformas = plataformaService.getAllPlataformas();
+				model.addAttribute("plataformas", plataformas);
 
-		usuarioService.saveUser(usuario);
+				return "usuario/registro";
+			}
 
-		return  "redirect:/usuario/list";
+			usuarioService.saveUser(usuario);
+			usuarioService.saveImg(file, usuario, false);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+		return "redirect:/usuario/list";
 	}
 
-	@RequestMapping(value="/usuario/edit/{id}", method=RequestMethod.GET)
+	@RequestMapping(value = "/usuario/edit/{id}", method = RequestMethod.GET)
 	public String editUsuario(Model modelo, @PathVariable("id") Integer id) {
 
 		Usuario usuario = usuarioService.findById(id);
 
 		modelo.addAttribute("nuevoUsuario", usuario);
 		modelo.addAttribute("edit", true);
-		return "registro";	
+		return "usuario/registro";
 	}
 
-	@RequestMapping(value="/usuario/update/{id}", method=RequestMethod.POST)
-	public String updateUsuario(@Valid @ModelAttribute("nuevoUsuario") Usuario usuario,
-			BindingResult br, @PathVariable("id") Integer id) {
+	@RequestMapping(value = "/usuario/update/{id}", method = RequestMethod.POST)
+	public String updateUsuario(@Valid @ModelAttribute("nuevoUsuario") Usuario usuario, BindingResult br,
+			@PathVariable("id") Integer id) {
 
 		if (br.hasErrors()) {
-			return "registro";
+			return "usuario/registro";
 		}
-		
+
+		// usuarioService.saveUser(usuario);
 		usuarioService.editUser(usuario);
 
 		return "redirect:/usuario/list";
 	}
 
-	@RequestMapping(value="/usuario/delete/{id}",method=RequestMethod.GET)
+	@RequestMapping(value = "/usuario/delete/{id}", method = RequestMethod.GET)
 	public String deleteUser(@PathVariable("id") Integer id) {
 
 		usuarioService.deleteUser(id);
@@ -83,6 +118,5 @@ public class UsuarioController {
 		return "redirect:/usuario/list";
 
 	}
-
 
 }
