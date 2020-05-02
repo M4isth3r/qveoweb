@@ -10,6 +10,9 @@ import javax.validation.constraints.Size;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -147,6 +150,7 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "ID_ROL", referencedColumnName = "ID", nullable = false)
+    @JsonIgnore
     public Rol getRol() {
         return rol;
     }
@@ -157,6 +161,7 @@ public class Usuario {
     
     @ManyToOne()
     @JoinColumn(name = "ID_PAIS", referencedColumnName = "ID", nullable = false)
+    @JsonIgnore
 	public Pais getPais() {
 		return pais;
 	}
@@ -182,6 +187,7 @@ public class Usuario {
             joinColumns = @JoinColumn(name = "id_usuario", nullable = false),
             inverseJoinColumns = @JoinColumn(name="id_plataforma", nullable = false)
     )
+	@JsonIgnore
 	public Collection<Plataforma> getPlataformas() {
 		return plataformas;
 	}
@@ -196,6 +202,7 @@ public class Usuario {
             joinColumns = @JoinColumn(name = "id_usuario", nullable = false),
             inverseJoinColumns = @JoinColumn(name="id_pelicula", nullable = false)
     )
+	@JsonIgnore
 	public Collection<Pelicula> getPeliculas() {
 		return peliculas;
 	}
@@ -210,6 +217,7 @@ public class Usuario {
             joinColumns = @JoinColumn(name = "id_usuario", nullable = false),
             inverseJoinColumns = @JoinColumn(name="id_serie", nullable = false)
     )
+	@JsonIgnore
 	public Collection<Serie> getSeries() {
 		return series;
 	}
