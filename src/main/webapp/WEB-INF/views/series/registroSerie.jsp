@@ -26,10 +26,10 @@
                             <div class="row">
                                 <c:choose>
                                     <c:when test="${editar}">
-                                        <c:set var="action" scope="session" value="/qveo/serie/update/${serieNueva.id}" />
+                                        <c:set var="action" scope="session" value="/qveo/serie/form" />
                                     </c:when>
                                     <c:otherwise>
-                                        <c:set var="action" scope="session" value="/qveo/serie/form/add" />
+                                        <c:set var="action" scope="session" value="/qveo/serie/form" />
                                     </c:otherwise>
                                 </c:choose>
 
@@ -39,6 +39,7 @@
                                         <div class="input-field col s8">
                                             <form:label path="titulo">Titulo</form:label>
                                             <form:input path="titulo" id="titulo" />
+                                            <form:errors path="titulo" style="color:red"></form:errors>
                                         </div>
                                         <div class="col s2"></div>
                                     </div>
@@ -57,6 +58,7 @@
                                         <div class="input-field col s8">
                                             <form:label path="temporadas">Temporada</form:label>
                                             <form:input path="temporadas" id="temporadas" />
+                                            <form:errors path="temporadas" style="color:red"></form:errors>
                                         </div>
                                         <div class="col s2"></div>
                                     </div>
@@ -66,6 +68,7 @@
                                         <div class="input-field col s8">
                                             <form:label path="capitulos">Capitulos</form:label>
                                             <form:input path="capitulos" id="capitulos" />
+                                            <form:errors path="temporadas" style="color:red"></form:errors>
                                         </div>
                                         <div class="col s2"></div>
                                     </div>
@@ -76,7 +79,8 @@
                                             <form:label path="poster">Poster</form:label>
                                             <input type="file" name="posters">
 
-                                            <c:if test="${editar}">
+                                            <c:if test="${editar== true}">
+                                                <form:input path="id" type="hidden" />
                                                 <div class="col s4">
                                                     <img alt="${serieNueva.titulo}" src="${pageContext.request.contextPath}${serieNueva.poster}" width="80%">
                                                 </div>
@@ -91,6 +95,7 @@
                                         <div class="col s8">
                                             <form:label path="sinopsis">Sinopsis</form:label>
                                             <form:textarea path="sinopsis" id="sinopsis" rows="4" cols="20" />
+                                            <form:errors path="sinopsis" style="color:red"></form:errors>
                                         </div>
                                         <div class="col s2"></div>
                                     </div>
@@ -174,6 +179,7 @@
 
                                                 </c:choose>
                                             </form:select>
+                                            <form:errors path="pais" style="color:red"></form:errors>
                                         </div>
                                         <div class="col s2"></div>
                                     </div>
