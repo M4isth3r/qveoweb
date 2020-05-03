@@ -29,3 +29,7 @@
 .material-icons{
 	font-size: 40px !important;
 }
+
+.row .boton{
+	padding: 0 !important;
+}
