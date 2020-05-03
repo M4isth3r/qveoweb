@@ -145,7 +145,7 @@ public class SerieController {
 			try {
 				uniqueFilename = uploadFileService.copy(file,1,serieNueva.getTitulo());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			
 				e.printStackTrace();
 			}
 		

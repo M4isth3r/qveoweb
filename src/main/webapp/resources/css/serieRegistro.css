@@ -1,14 +1,16 @@
-.border{
-	border: 2px solid white;
-	padding: 4px;
+.border {
+    border: 2px solid white;
+    padding: 4px;
 }
 
-.fondo{
-	color: red;
+.fondo {
+    color: red;
 }
+
 .generoName {
-	padding-left: 2%;
+    padding-left: 2%;
 }
+
 select {
-	visibility: visible;
+    visibility: visible;
 }

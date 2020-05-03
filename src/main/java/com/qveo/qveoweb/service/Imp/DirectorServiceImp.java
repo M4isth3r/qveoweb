@@ -17,7 +17,7 @@ public class DirectorServiceImp implements 	DirectorService{
 	
 	@Override
 	public List<Director> getAllDirector() {
-		// TODO Auto-generated method stub
+	
 		return directorDao.findAll();
 	}
 
