@@ -94,9 +94,10 @@ public class ActorController {
 			try {
 				uniqueFilename = uploadFileService.copy(file, 3, actorNuevo.getNombre());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			
 				e.printStackTrace();
 			}
+			
 			actorNuevo.setFoto("/resources/img/actores/" + uniqueFilename);
 		}
 
@@ -114,7 +115,10 @@ public class ActorController {
 	@GetMapping("/actor/delete/{id}")
 	public String deleteActor(@PathVariable("id") Integer id) {
 
+		String rutaFoto = actorService.getActor(id).get().getFoto();
+		String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
 		actorService.deleteActor(id);
+		uploadFileService.delete(ruta,3);
 		
 		return "redirect:/actor/list";
 

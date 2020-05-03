@@ -1023,3 +1023,175 @@ java.sql.SQLSyntaxErrorException: Unknown column 'peliculapl0_.caduca' in 'field
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 >>>>>>> develop
+2020-05-03 18:34:26,283 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-FC3GEBV with PID 12188 (C:\Users\Alex\Desktop\github_QveoWeb\qveoweb\target\classes started by Alex in c:\Users\Alex\Desktop\github_QveoWeb\qveoweb)
+2020-05-03 18:34:26,283 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 18:34:26,283 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-05-03 18:34:27,600 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-05-03 18:34:27,601 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-03 18:34:27,873 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-03 18:34:27,884 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-05-03 18:34:28,107 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-03 18:34:28,633 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-03 18:34:28,673 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-03 18:34:28,723 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-03 18:34:28,965 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-03 18:34:29,077 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-03 18:34:29,896 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-03 18:34:30,742 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 4.797 seconds (JVM running for 5.369)
+2020-05-03 18:34:33,255 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-03 18:34:33,288 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via Get
+2020-05-03 18:35:18,103 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via Get
+2020-05-03 18:35:35,665 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-10] Executing home() method via Get
+2020-05-03 18:35:41,139 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo].[dispatcherServlet] [http-nio-8080-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [/qveo] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.qveo.qveoweb.controller.ActorController.guardar(ActorController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-03 18:38:51,741 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-FC3GEBV with PID 6476 (C:\Users\Alex\Desktop\github_QveoWeb\qveoweb\target\classes started by Alex in c:\Users\Alex\Desktop\github_QveoWeb\qveoweb)
+2020-05-03 18:38:51,744 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 18:38:51,744 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-05-03 18:38:52,837 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-05-03 18:38:52,838 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-03 18:38:53,072 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-03 18:38:53,076 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-05-03 18:38:53,206 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-03 18:38:53,695 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-03 18:38:53,735 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-03 18:38:53,792 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-03 18:38:53,923 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-03 18:38:54,021 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-03 18:38:54,735 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-03 18:38:55,469 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 4.083 seconds (JVM running for 4.616)
+2020-05-03 18:39:05,905 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-03 18:39:06,751 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-3] Executing home() method via Get
+2020-05-03 18:39:21,716 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-9] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\wakanda_as.jpg
+2020-05-03 18:39:21,910 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-5] Executing home() method via Get
+2020-05-03 18:39:35,746 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-8] pathBorrar1: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\wakanda_as.jpg
+2020-05-03 18:39:35,746 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-8] pathBorrar2: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\wakanda_as.jpg
+2020-05-03 18:39:35,755 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-8] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\wakanda_as.jpg
+2020-05-03 18:39:35,884 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via Get
+2020-05-03 18:39:49,689 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-3] Executing home() method via Get
+2020-05-03 18:40:42,596 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-1] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\lopsadasdas.jpg
+2020-05-03 18:43:08,139 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-FC3GEBV with PID 7616 (C:\Users\Alex\Desktop\github_QveoWeb\qveoweb\target\classes started by Alex in c:\Users\Alex\Desktop\github_QveoWeb\qveoweb)
+2020-05-03 18:43:08,139 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 18:43:08,139 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-05-03 18:43:09,139 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-05-03 18:43:09,139 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-03 18:43:09,371 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-03 18:43:09,376 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-05-03 18:43:09,495 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-03 18:43:09,959 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-03 18:43:09,997 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-03 18:43:10,044 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-03 18:43:10,188 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-03 18:43:10,339 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-03 18:43:11,242 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-03 18:43:12,119 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 4.278 seconds (JVM running for 4.799)
+2020-05-03 18:43:14,329 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-03 18:43:29,881 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-10] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\sasasassasassaspppp.jpg
+2020-05-03 18:46:57,032 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-FC3GEBV with PID 2680 (C:\Users\Alex\Desktop\github_QveoWeb\qveoweb\target\classes started by Alex in c:\Users\Alex\Desktop\github_QveoWeb\qveoweb)
+2020-05-03 18:46:57,034 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 18:46:57,034 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-05-03 18:46:58,117 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-05-03 18:46:58,117 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-03 18:46:58,354 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-03 18:46:58,358 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-05-03 18:46:58,472 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-03 18:46:58,914 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-03 18:46:58,949 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-03 18:46:58,999 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-03 18:46:59,137 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-03 18:46:59,235 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-03 18:46:59,909 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-03 18:47:00,681 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 3.979 seconds (JVM running for 4.491)
+2020-05-03 18:47:04,939 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-03 18:47:15,442 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-5] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\qwqwqwqwq.png
+2020-05-03 18:54:14,096 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-FC3GEBV with PID 10144 (C:\Users\Alex\Desktop\github_QveoWeb\qveoweb\target\classes started by Alex in c:\Users\Alex\Desktop\github_QveoWeb\qveoweb)
+2020-05-03 18:54:14,098 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 18:54:14,099 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-05-03 18:54:15,351 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-05-03 18:54:15,351 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-03 18:54:15,619 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-03 18:54:15,624 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-05-03 18:54:15,744 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-03 18:54:16,239 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-03 18:54:16,279 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-03 18:54:16,325 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-03 18:54:16,452 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-03 18:54:16,552 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-03 18:54:17,309 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-03 18:54:18,159 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 4.383 seconds (JVM running for 4.899)
+2020-05-03 18:54:21,132 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-03 18:54:37,079 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-6] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\quisdsdaslop.jpg
+2020-05-03 18:54:43,094 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-7] pathBorrar1: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\quisdsdaslop.jpg
+2020-05-03 18:54:43,095 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-7] pathBorrar2: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\quisdsdaslop.jpg
+2020-05-03 18:55:30,609 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-FC3GEBV with PID 9868 (C:\Users\Alex\Desktop\github_QveoWeb\qveoweb\target\classes started by Alex in c:\Users\Alex\Desktop\github_QveoWeb\qveoweb)
+2020-05-03 18:55:30,609 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 18:55:30,612 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-05-03 18:55:31,656 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-05-03 18:55:31,656 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-03 18:55:31,896 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-03 18:55:31,901 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-05-03 18:55:32,036 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-03 18:55:32,509 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-03 18:55:32,550 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-03 18:55:32,590 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-03 18:55:32,747 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-03 18:55:32,856 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-03 18:55:33,549 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-03 18:55:34,452 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 4.138 seconds (JVM running for 4.653)
+2020-05-03 18:55:39,139 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-03 18:55:50,220 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-2] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\asasasaplodsafdasdfd.jpg
+2020-05-03 18:56:04,765 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-5] pathBorrar1: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\asasasaplodsafdasdfd.jpg
+2020-05-03 18:56:04,766 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-5] pathBorrar2: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\asasasaplodsafdasdfd.jpg
+2020-05-03 18:56:04,766 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-5] rootPath: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\asasasaplodsafdasdfd.png
+2020-05-03 18:56:08,910 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-8] pathBorrar1: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\asasasaplodsafdasdfd.png
+2020-05-03 18:56:08,910 INFO com.qveo.qveoweb.service.Imp.UploadFileServiceImpl [http-nio-8080-exec-8] pathBorrar2: c:\Users\Alex\Desktop\github_QveoWeb\qveoweb\src\main\webapp\resources\img\actores\asasasaplodsafdasdfd.png

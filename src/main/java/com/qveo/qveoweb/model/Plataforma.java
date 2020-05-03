@@ -15,7 +15,7 @@ public class Plataforma {
     private Collection<Serie> series;
     private Collection<Usuario> usuarios;   
     private Set<PeliculaPlataforma> peliculaPlataformas = new HashSet<PeliculaPlataforma>();
-
+    private String logo;
     
     
     public Plataforma() {
@@ -72,5 +72,15 @@ public class Plataforma {
 
 	public void setUsuarios(Collection<Usuario> usuarios) {
 		this.usuarios = usuarios;
+    }
+    
+    @Basic
+    @Column(name = "LOGO")
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
 	}
 }
