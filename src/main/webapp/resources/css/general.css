@@ -9,8 +9,9 @@ nav{
     color: #00adb5;
 }
 
-.footer{
-    background-color: #222831;
+.page-footer{
+    background-color: #222831 !important;
+    color: #00adb5 !important;
 }
 
 .carousel{

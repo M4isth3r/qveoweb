@@ -1,4 +1,4 @@
-    <div class="container footer">
+    <div class="container">
         <div class="row">
                 <div class="col l6 s12">
                         <h5 class="white-text">Footer</h5>
@@ -17,7 +17,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-        Â© 2020 Copyright Qveo
+        © 2020 Copyright Qveo
         <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
     </div>

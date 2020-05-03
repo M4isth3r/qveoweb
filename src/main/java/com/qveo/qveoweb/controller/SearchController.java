@@ -36,7 +36,7 @@ public class SearchController {
         Usuario usuario = usuarioService.findById(id);
         
         if (usuario == null) {
-            result.setMsg("no user found!");
+            result.setMsg("Usuario no encontrado");
         } else {
             result.setMsg("success");
         }

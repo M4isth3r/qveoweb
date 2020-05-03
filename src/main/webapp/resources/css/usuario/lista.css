@@ -1,0 +1,31 @@
+
+/* *{ */
+/*     margin: 0 !important; */
+/*     padding: 0 !important; */
+/*     box-sizing: border-box !important; */
+/* } */
+.cabeceras, .cuerpo{
+	margin : 0 !important;
+	font-size: 30px;
+	text-align: center;
+	
+}
+
+.cabeceras{
+	font-weight: bold;
+	background-color: #00adb5;
+/* 	border: 2px solid #fff; */
+}
+
+.cuerpo{
+	background-color: #eeeeee;
+	border-bottom: 1px solid #fff;
+}
+
+.cuerpo:hover{
+	background-color: #ddd;
+}
+
+.material-icons{
+	font-size: 40px !important;
+}
