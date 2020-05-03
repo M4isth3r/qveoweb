@@ -15,6 +15,7 @@ public class Genero {
     private Collection<Serie> series;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ID")
     public Integer getId() {
         return id;
