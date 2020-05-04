@@ -15,4 +15,6 @@ public interface UsuarioService {
     public void editUser(Usuario usuario);
     public void deleteUser(Integer id);
     public void saveImg(MultipartFile file, Usuario usuario, boolean actFile) throws IOException;
+    public List<Usuario> findUsuarioPorNombre(String nombre);
+    public boolean usuarioExiste(Integer id);
 }

@@ -113,6 +113,20 @@ public class UsuarioServiceImp implements UsuarioService {
             e.printStackTrace();
         }
     }
+
+	@Override
+	public List<Usuario> findUsuarioPorNombre(String nombre) {
+		
+		List<Usuario> usuarios = usuarioDao.findByNombreStartingWith(nombre);
+		
+		return usuarios;
+	}
+
+	@Override
+	public boolean usuarioExiste(Integer id) {
+		
+		return usuarioDao.existsById(id);
+	}
     
 
 }

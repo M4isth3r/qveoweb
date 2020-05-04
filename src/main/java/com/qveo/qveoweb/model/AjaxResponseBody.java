@@ -6,7 +6,14 @@ public class AjaxResponseBody {
 	
 	String msg;
 	Usuario result;
+	List<Usuario> usuarios;
 	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
 	public String getMsg() {
 		return msg;
 	}

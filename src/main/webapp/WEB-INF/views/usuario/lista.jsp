@@ -28,10 +28,14 @@
 	<main>
 		<div class="container">
 			<div class="row">
-				<div class="col s12 boton">
+				<div class="col s6 boton">
 					<a href="/qveo/usuario/form"><i
 						class="waves-effect waves-light btn agregar-usuario">Nuevo
 							Usuario</i></a>
+				</div>
+				<div class="input-field col s6 boton">
+					<input id="usuario-nombre" type="text" class="validate"> <label
+						for="usuario-nombre">Introduzca un nombre de usuario</label>
 				</div>
 			</div>
 			<div class="row cabeceras">
@@ -83,6 +87,7 @@
 
 </body>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/materialize.js"></script>
 <script>
@@ -110,6 +115,11 @@
 			borrarUsuario(id);
 
 		});
+		
+		$("#usuario-nombre").keyup(function(event){
+			
+			if(event.target.value != '') mostrarUsuarios();
+		});
 
 	});
 
@@ -117,6 +127,7 @@
 
 		$
 				.ajax({
+					type : 'GET',
 					url : '/qveo/ajax/usuario/' + id,
 					success : function(data) {
 
@@ -186,17 +197,43 @@
 	function borrarUsuario(id) {
 		$
 			.ajax({
-			url : '/qveo/ajax/usuario/delete/' + id,
-			success : function(data) {
-		
-				console.log("SUCCESS : ", data);
-			},
-			error : function(e) {
-
-				console.log("ERROR : ", e);
-			}
+				type : 'GET',
+				url : '/qveo/ajax/usuario/delete/' + id,
+				success : function(data) {
+			
+					console.log("SUCCESS : ", data);
+				},
+				error : function(e) {
+	
+					console.log("ERROR : ", e);
+				}
 		});
+	}
+	
 
+	function mostrarUsuarios() {
+
+		let busqueda = {};
+
+		busqueda["nombre"] = $("#usuario-nombre").val();
+		console.log(busqueda);
+
+		$
+			.ajax({
+				type : 'POST',
+				contentType : 'application/json',
+				url : '/qveo/ajax/usuarios/',
+				data : JSON.stringify(busqueda),
+				dataType : 'json',
+				success : function(data) {
+	
+					console.log("SUCCESS : ", data);
+				},
+				error : function(e) {
+	
+					console.log("ERROR : ", e);
+				}
+		});
 	}
 </script>
 
