@@ -44,18 +44,17 @@
 					<div class="col s4">${usuario.nombre}</div>
 					<div class="col s4">${usuario.apellidos}</div>
 					<div class="col s4">
-						<div class="row">
-							<div class="col s12 l4">
-								<a id="${usuario.id}" class="modal-trigger mostrar-usuario material-icons"
+						<div id="${usuario.id}" class="row opciones">
+							<div class="col s12 m3 l4">
+								<a class="modal-trigger mostrar-usuario material-icons"
 									href="#modal1">visibility</a>
 							</div>
-							<div class="col s12 l4">
+							<div class="col s12 m3 l4">
 								<a href="/qveo/usuario/edit/${usuario.id}"><i
 									class="material-icons editar">edit</i></a>
 							</div>
-							<div class="col s12 l4">
-								<a href="/qveo/usuario/delete/${usuario.id}"><i
-									class="material-icons eliminar">delete</i></a>
+							<div class="col s12 m6 l4">
+								<a href="#" class="material-icons eliminar-usuario">delete</a>
 							</div>
 						</div>
 
@@ -68,13 +67,13 @@
 			<div id="modal1" class="modal">
 				<div id="contenido" class="modal-content">
 					<div class="row">
-						<div class="col s12 l5"></div>
-						<div class="col s12 l7"></div>
+						<div class="col s12 m12 l5"></div>
+						<div class="col s12 m12 l7"></div>
 					</div>
 				</div>
-<!-- 				<div class="modal-footer"> -->
-<!-- 					<a href="#" class="modal-close waves-effect waves-green btn-flat">Cerrar</a> -->
-<!-- 				</div> -->
+				<!-- 				<div class="modal-footer"> -->
+				<!-- 					<a href="#" class="modal-close waves-effect waves-green btn-flat">Cerrar</a> -->
+				<!-- 				</div> -->
 			</div>
 		</div>
 	</main>
@@ -97,9 +96,18 @@
 
 		$(".mostrar-usuario").click(function(event) {
 
-			let id = event.target.getAttribute('id');
-			console.log(event.target.getAttribute('id'));
+			let id = event.target.parentNode.parentNode.getAttribute('id');
+			console.log(event.target.parentNode.parentNode.getAttribute('id'));
 			mostrarUsuario(id);
+
+		});
+		
+		$(".eliminar-usuario").click(function(event) {
+
+			let id = event.target.parentNode.parentNode.getAttribute('id');
+			console.log(event.target.parentNode.parentNode.getAttribute('id'));
+			event.target.parentNode.parentNode.parentNode.parentNode.remove();
+			borrarUsuario(id);
 
 		});
 
@@ -115,50 +123,53 @@
 						console.log(data.foto);
 						let rutaFoto = data.foto;
 						let contenido = document.getElementById('contenido');
-						let cajas = document.getElementById('contenido').childNodes[1].querySelectorAll('div');
+						let cajas = document.getElementById('contenido').childNodes[1]
+								.querySelectorAll('div');
 
-						//contenido.innerHTML += '<h4>Datos del usuario:'+ data.nombre + '</h4>';
-
-// 						for ( const prop in data) {
-// 							contenido.innerHTML += prop + ':' + data[prop]+ '<br>';
-// 						}
 						cajas[0].innerHTML = '';
-						cajas[0].innerHTML = '<img width="100%" src="${pageContext.request.contextPath}'+data.foto+'">';
-	
+						cajas[0].innerHTML = '<img width="100%" src="${pageContext.request.contextPath}'
+								+ data.foto + '">';
+
+						//Formateamos fechas
+						let fechaNa = new Date(data.fechaNacimiento);
+						let fechaAl = new Date(data.fechaAlta);
+
 						let datos = {
-							identificador: data.id,
-							nombre: data.nombre,
-							apellidos: data.apellidos,
-							nacimiento: data.fechaNacimiento,
-							password: data.password,
-							sexo: data.sexo,
-							alta: data.fechaAlta
+							identificador : data.id,
+							nombre : data.nombre,
+							apellidos : data.apellidos,
+							email : data.email,
+							nacimiento : fechaNa.toLocaleDateString(),
+							password : data.password,
+							sexo : data.sexo,
+							alta : fechaAl.toLocaleDateString()
 						};
-						
-						cajas[1].innerHTML ='';
+
+						cajas[1].innerHTML = '';
 						let fila = document.createElement('div');
 						fila.classList.add('row');
-						let titulo = document.createElement('h3');
-						let textoTitulo = document.createTextNode('Usuario con id: '+data.id);
-						titulo.appendChild(textoTitulo);
-						fila.appendChild(titulo);
-						
-						for(const prop in datos){
+						//let titulo = document.createElement('h3');
+						//let textoTitulo = document.createTextNode('Usuario con id: '+data.id);
+						//titulo.appendChild(textoTitulo);
+						//fila.appendChild(titulo);
+
+						for ( const prop in datos) {
 							let contenedor = document.createElement('div');
-							contenedor.classList.add('col', 's6', 'cabeceras');
-							let encabezado = document.createTextNode(prop+':');
+							contenedor.classList.add('col', 's4', 'cabeceras');
+							let encabezado = document
+									.createTextNode(prop + ':');
 							contenedor.appendChild(encabezado);
 							let contenedor2 = document.createElement('div');
-							contenedor2.classList.add('col', 's6', 'cuerpo');
+							contenedor2.classList.add('col', 's8', 'cuerpo');
 							let valor = document.createTextNode(datos[prop]);
 							contenedor2.appendChild(valor);
 							fila.appendChild(contenedor);
 							fila.appendChild(contenedor2);
-							
+
 						}
 						//Agregamos todo al segundo row
 						cajas[1].appendChild(fila);
-						
+
 						console.log("SUCCESS : ", data);
 
 					},
@@ -168,6 +179,23 @@
 
 					}
 				});
+
+	}
+	
+
+	function borrarUsuario(id) {
+		$
+			.ajax({
+			url : '/qveo/ajax/usuario/delete/' + id,
+			success : function(data) {
+		
+				console.log("SUCCESS : ", data);
+			},
+			error : function(e) {
+
+				console.log("ERROR : ", e);
+			}
+		});
 
 	}
 </script>

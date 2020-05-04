@@ -13,6 +13,8 @@
 	href="${pageContext.request.contextPath}/resources/css/general.css">
 	<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/registro.css">
+	<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/footer.css">
 </head>
 <body>
 	<header>
@@ -98,7 +100,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="chips chips-autocomplete">
+					<div class="chips chips-autocomplete col s12 m12 l6 offset-l3">
 					</div>
 <!-- 					<div class="col s12 m12 l6 offset-l3"> -->
 <!-- 						<div class="chips chips-initial"> -->
@@ -169,7 +171,7 @@
 			</form:form>
 		</div>
 	</main>
-	<footer>
+	<footer class="page-footer">
 		<%@include file="/WEB-INF/views/layout/footer.jsp"%>
 	</footer>
 
