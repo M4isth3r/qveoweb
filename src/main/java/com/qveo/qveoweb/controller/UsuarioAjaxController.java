@@ -12,18 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qveo.qveoweb.model.AjaxResponseBody;
 import com.qveo.qveoweb.model.Usuario;
+import com.qveo.qveoweb.service.IUploadFileService;
 import com.qveo.qveoweb.service.UsuarioService;
 
 @RestController
 public class UsuarioAjaxController {
 	
 	@Autowired
-	UsuarioService usuarioService;
+	private UsuarioService usuarioService;
+	
+	@Autowired
+	private IUploadFileService uploadFileService;
 	
 	@RequestMapping(value = "/ajax/usuario/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getSearchResultViaAjax(@PathVariable("id") Integer id) {
-
-        //AjaxResponseBody result = new AjaxResponseBody();
 
         Usuario usuario = usuarioService.findById(id);
 
@@ -34,14 +36,12 @@ public class UsuarioAjaxController {
 	@RequestMapping(value = "/ajax/usuario/delete/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> deleteUser(@PathVariable("id") Integer id) {
 
-		//AjaxResponseBody result = new AjaxResponseBody();
+		Usuario usuario = usuarioService.findById(id);
+		String rutaFoto = usuarioService.findById(id).getFoto();
+		String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
 		
-		//if(usuarioService.usuarioExiste(id)) {
-			
-			Usuario usuario = usuarioService.findById(id);
-			
-			usuarioService.deleteUser(id);
-		//}
+		usuarioService.deleteUser(id);
+		uploadFileService.delete(ruta, 6);
 
 		return ResponseEntity.ok(usuario);
 
@@ -49,8 +49,6 @@ public class UsuarioAjaxController {
 	
 	@RequestMapping(value = "/ajax/usuarios/", method = RequestMethod.POST)
 	public ResponseEntity<?> getUsuariosPorNombre(@RequestBody Usuario usuario) {
-
-		//AjaxResponseBody result = new AjaxResponseBody();
 
 		List<Usuario> usuarios = usuarioService.findUsuarioPorNombre(usuario.getNombre());
 

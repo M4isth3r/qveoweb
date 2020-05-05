@@ -18,6 +18,7 @@ import javax.validation.Valid;
 import com.qveo.qveoweb.model.Pais;
 import com.qveo.qveoweb.model.Plataforma;
 import com.qveo.qveoweb.model.Usuario;
+import com.qveo.qveoweb.service.IUploadFileService;
 import com.qveo.qveoweb.service.PaisService;
 import com.qveo.qveoweb.service.PlataformaService;
 import com.qveo.qveoweb.service.UsuarioService;
@@ -30,6 +31,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 public class UsuarioController {
 
+	private boolean editar = false;
+
 	@Autowired
 	private UsuarioService usuarioService;
 
@@ -38,6 +41,9 @@ public class UsuarioController {
 
 	@Autowired
 	private PlataformaService plataformaService;
+
+	@Autowired
+	private IUploadFileService uploadFileService;
 
 	@RequestMapping(value = "/usuario/list", method = RequestMethod.GET)
 	public String listarUsuarios(Model modelo) {
@@ -78,8 +84,24 @@ public class UsuarioController {
 				return "usuario/registro";
 			}
 
+			if (!file.isEmpty()) {
+				if(editar) {
+					
+					String rutaFoto = usuarioService.findById(usuario.getId()).getFoto();
+					String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
+	
+					if (usuario.getId() != null && usuario.getId() > 0 && ruta != null && ruta.length() > 0) uploadFileService.delete(ruta, 6);
+				
+				}
+				String uniqueFilename = uploadFileService.copy(file,6,usuario.getNombre());
+				usuario.setFoto("/resources/img/usuarios/"+uniqueFilename);
+			}
+			
+			if(file.isEmpty() && editar) {
+				usuario.setFoto(usuarioService.findById(usuario.getId()).getFoto());
+			}
+			
 			usuarioService.saveUser(usuario);
-			usuarioService.saveImg(file, usuario, false);
 
 		} catch (IOException e) {
 
@@ -91,11 +113,12 @@ public class UsuarioController {
 
 	@RequestMapping(value = "/usuario/edit/{id}", method = RequestMethod.GET)
 	public String editUsuario(Model modelo, @PathVariable("id") Integer id) {
-
+		
+		editar=true;
 		Usuario usuario = usuarioService.findById(id);
 
 		modelo.addAttribute("nuevoUsuario", usuario);
-		modelo.addAttribute("edit", true);
+		modelo.addAttribute("edit", editar);
 		return "usuario/registro";
 	}
 
@@ -107,34 +130,38 @@ public class UsuarioController {
 			return "usuario/registro";
 		}
 
-		// usuarioService.saveUser(usuario);
-		usuarioService.editUser(usuario);
+		usuarioService.saveUser(usuario);
+		//usuarioService.editUser(usuario);
 
 		return "redirect:/usuario/list";
 	}
 
 	@RequestMapping(value = "/usuario/delete/{id}", method = RequestMethod.GET)
 	public String deleteUser(@PathVariable("id") Integer id) {
-
+		
+		String rutaFoto = usuarioService.findById(id).getFoto();
+		String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
+		
 		usuarioService.deleteUser(id);
+		uploadFileService.delete(ruta, 1);
 
 		return "redirect:/usuario/list";
 
 	}
-	
+
 	@RequestMapping(value = "/busqueda", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Usuario> getUsuarios(){
-		
-		//String result = "hola mundo!";
-		
-		List<Usuario> usuarios = usuarioService.findAllUsuarios();
-		//Usuario usuario = usuarioService.findById(1);
-		
-		//model.addAttribute("usuarios", usuarios);
+	public List<Usuario> getUsuarios() {
 
-        return usuarios;
-		
+		// String result = "hola mundo!";
+
+		List<Usuario> usuarios = usuarioService.findAllUsuarios();
+		// Usuario usuario = usuarioService.findById(1);
+
+		// model.addAttribute("usuarios", usuarios);
+
+		return usuarios;
+
 	}
 
 }
