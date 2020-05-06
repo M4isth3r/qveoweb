@@ -57,7 +57,7 @@ public class UsuarioController {
 
 	@RequestMapping(value = "/usuario/form", method = RequestMethod.GET)
 	public String mostrarFormulario(Model model) {
-
+		editar=false;
 		model.addAttribute("nuevoUsuario", new Usuario());
 
 		List<Pais> paises = paisService.getAllPais();
@@ -74,7 +74,8 @@ public class UsuarioController {
 			@RequestParam(value = "file") MultipartFile file, Model model) {
 		try {
 			if (br.hasErrors()) {
-				System.out.println(br.getAllErrors());
+				model.addAttribute("nuevoUsuario", usuario);
+				
 				List<Pais> paises = paisService.getAllPais();
 				model.addAttribute("paises", paises);
 
@@ -84,13 +85,17 @@ public class UsuarioController {
 				return "usuario/registro";
 			}
 
+			
+			
 			if (!file.isEmpty()) {
 				if(editar) {
 					
 					String rutaFoto = usuarioService.findById(usuario.getId()).getFoto();
 					String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
 	
-					if (usuario.getId() != null && usuario.getId() > 0 && ruta != null && ruta.length() > 0) uploadFileService.delete(ruta, 6);
+					if (usuario.getId() != null && usuario.getId() > 0 && ruta != null && ruta.length() > 0) {
+						uploadFileService.delete(ruta, 6);
+					}
 				
 				}
 				String uniqueFilename = uploadFileService.copy(file,6,usuario.getNombre());
@@ -112,56 +117,68 @@ public class UsuarioController {
 	}
 
 	@RequestMapping(value = "/usuario/edit/{id}", method = RequestMethod.GET)
-	public String editUsuario(Model modelo, @PathVariable("id") Integer id) {
+	public String editUsuario(Model modelo, @PathVariable("id") Integer id, Model model) {
 		
 		editar=true;
 		Usuario usuario = usuarioService.findById(id);
+		
+		List<Pais> paises = paisService.getAllPais();
+		model.addAttribute("paises", paises);
+
+		List<Plataforma> plataformas = plataformaService.getAllPlataformas();
+		model.addAttribute("plataformas", plataformas);
 
 		modelo.addAttribute("nuevoUsuario", usuario);
 		modelo.addAttribute("edit", editar);
+		
 		return "usuario/registro";
 	}
 
-	@RequestMapping(value = "/usuario/update/{id}", method = RequestMethod.POST)
-	public String updateUsuario(@Valid @ModelAttribute("nuevoUsuario") Usuario usuario, BindingResult br,
-			@PathVariable("id") Integer id) {
+//	@RequestMapping(value = "/usuario/update/{id}", method = RequestMethod.POST)
+//	public String updateUsuario(@Valid @ModelAttribute("nuevoUsuario") Usuario usuario, BindingResult br,
+//			@PathVariable("id") Integer id, Model model) {
+//
+//		if (br.hasErrors()) {
+//			
+//			List<Pais> paises = paisService.getAllPais();
+//			model.addAttribute("paises", paises);
+//
+//			List<Plataforma> plataformas = plataformaService.getAllPlataformas();
+//			model.addAttribute("plataformas", plataformas);
+//			
+//			return "usuario/registro";
+//		}
+//
+//		usuarioService.saveUser(usuario);
+//		//usuarioService.editUser(usuario);
+//
+//		return "redirect:/usuario/list";
+//	}
 
-		if (br.hasErrors()) {
-			return "usuario/registro";
-		}
+//	@RequestMapping(value = "/usuario/delete/{id}", method = RequestMethod.GET)
+//	public String deleteUser(@PathVariable("id") Integer id) {
+//		
+//		String rutaFoto = usuarioService.findById(id).getFoto();
+//		String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
+//		
+//		usuarioService.deleteUser(id);
+//		uploadFileService.delete(ruta, 1);
+//
+//		return "redirect:/usuario/list";
+//
+//	}
 
-		usuarioService.saveUser(usuario);
-		//usuarioService.editUser(usuario);
-
-		return "redirect:/usuario/list";
-	}
-
-	@RequestMapping(value = "/usuario/delete/{id}", method = RequestMethod.GET)
-	public String deleteUser(@PathVariable("id") Integer id) {
-		
-		String rutaFoto = usuarioService.findById(id).getFoto();
-		String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
-		
-		usuarioService.deleteUser(id);
-		uploadFileService.delete(ruta, 1);
-
-		return "redirect:/usuario/list";
-
-	}
-
-	@RequestMapping(value = "/busqueda", method = RequestMethod.GET)
-	@ResponseBody
-	public List<Usuario> getUsuarios() {
-
-		// String result = "hola mundo!";
-
-		List<Usuario> usuarios = usuarioService.findAllUsuarios();
-		// Usuario usuario = usuarioService.findById(1);
-
-		// model.addAttribute("usuarios", usuarios);
-
-		return usuarios;
-
-	}
+//	@RequestMapping(value = "/busqueda", method = RequestMethod.GET)
+//	@ResponseBody
+//	public List<Usuario> getUsuarios() {
+//
+//		List<Usuario> usuarios = usuarioService.findAllUsuarios();
+//		// Usuario usuario = usuarioService.findById(1);
+//
+//		// model.addAttribute("usuarios", usuarios);
+//
+//		return usuarios;
+//
+//	}
 
 }

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var fecha = document.querySelectorAll('.datepicker');
 	var instance = M.Datepicker.init(fecha, {
-		format : 'yyyy-mm-dd',
+		format : 'dd-mm-yyyy',
 		yearRange : 100
 	});
 
@@ -10,11 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	var instance2 = M.FormSelect.init(opciones);
 
 	var elems = document.querySelectorAll('.chips');
-	var datos = document.getElementsByClassName('plataformas');
+	var plataformasDisponibles = document.getElementsByClassName('plataformas');
+	
 	var datosObj = {};
 
-	for (var i = 0; i < datos.length; i++) {
-		datosObj[datos[i].id] = null;
+	for (var i = 0; i < plataformasDisponibles.length; i++) {
+		datosObj[plataformasDisponibles[i].id] = null;
 	}
 
 	var options = {
@@ -25,10 +26,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var instance3 = M.Chips.init(elems, options);
 	
-	document.getElementById('boton').addEventListener('click', crearInput);
+	var plataformasUsuario = document.getElementsByClassName('plataformas-usuario');
+	
+	datosObjUser = {};
+	
+	var instancia = M.Chips.getInstance(elems);
+	
+	if(plataformasUsuario.length > 0){
+		for (var i = 0; i < plataformasUsuario.length; i++) {
+			datosObjUser["tag"] = plataformasUsuario[i];
+			$('.chips-initial').chips({
+				data: {
+					tag: 'Apple'
+				}
+			})
+		}
+	}
 	
 	
-	function crearInput(){
+	let botones = document.getElementsByClassName('botones');
+	for(let i = 0; i<botones.length; i++){
+		botones[i].addEventListener('click', crearInput);
+	}
+	
+	function crearInput(event){
 		var etiquetas = document.getElementsByClassName('chip');
 		for(var i=0; i<etiquetas.length; i++){
 			var identificador = etiquetas[i].textContent.replace('close','');

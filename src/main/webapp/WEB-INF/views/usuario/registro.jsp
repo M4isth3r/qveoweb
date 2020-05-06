@@ -1,7 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
 <title>Registro nuevo usuario</title>
@@ -11,9 +11,9 @@
 	href="${pageContext.request.contextPath}/resources/css/materialize.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/general.css">
-	<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/registro.css">
-	<link rel="stylesheet"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/usuario/registro.css">
+<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/footer.css">
 </head>
 <body>
@@ -21,20 +21,12 @@
 		<%@include file="/WEB-INF/views/layout/header.jsp"%>
 	</header>
 	<main>
-	<div class="container">
-			<c:choose>
-				<c:when test="${edit}">
-					<c:set var="action" scope="session"
-						value="/qveo/usuario/update/${nuevoUsuario.id}" />
-				</c:when>
-				<c:otherwise>
-					<c:set var="action" scope="session" value="/qveo/usuario/form/add" />
-				</c:otherwise>
-			</c:choose>
-			<form:form method="POST" action="${action}"
+		<div class="container">
+			<c:url var="actionUrl" value="/usuario/form/add" />
+			<form:form method="POST" action="${actionUrl}"
 				modelAttribute="nuevoUsuario" enctype="multipart/form-data"
 				class="col s12 m12 l6 offset-l3 white-text">
-
+				<!-- nombre y apellidos usuario -->
 				<div class="row">
 					<div class="input-field col s12 m6 l6 offset-l3">
 						<form:input path="nombre" id="first_name" class="validate" />
@@ -47,7 +39,7 @@
 						<form:errors path="apellidos" style="color:red"></form:errors>
 					</div>
 				</div>
-				
+				<!-- email y password usuario -->
 				<div class="row">
 					<div class="input-field col s12 m6 l6 offset-l3">
 						<form:input id="email" type="email" path="email" class="validate" />
@@ -57,8 +49,18 @@
 						<form:errors path="email" style="color:red"></form:errors>
 					</div>
 					<div class="input-field col s12 m6 l6 offset-l3">
-						<form:password id="password" path="password" class="validate" />
-						<form:label for="password" path="password">Password</form:label>
+						<c:choose>
+							<c:when test="${edit}">
+								<form:input value="${nuevoUsuario.password}" id="password"
+									class="validate" path="password" />
+								<form:label for="password" path="password">Password</form:label>
+							</c:when>
+							<c:otherwise>
+								<form:password id="password" path="password" showPassword="true"
+									class="validate" />
+								<form:label for="password" path="password">Password</form:label>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 				<div class="row">
@@ -66,6 +68,7 @@
 						<form:label path="sexo">Género</form:label>
 					</div>
 				</div>
+				<!--  genero usuario -->
 				<div class="row">
 					<div class="col s12 m12 l6 offset-l3">
 						<form:label for="mas" path="sexo">
@@ -78,13 +81,15 @@
 						</form:label>
 					</div>
 				</div>
+				<!--  fecha nacimiento usuario -->
 				<div class="row">
 					<div class="col s12 m12 l6 offset-l3">
 						<form:label for="date" path="fechaNacimiento">Fecha de Nacimiento</form:label>
-						<form:input id="date" class="datepicker" path="fechaNacimiento"/>
+						<form:input id="date" class="datepicker" path="fechaNacimiento" />
 						<form:errors path="fechaNacimiento" style="color:red"></form:errors>
 					</div>
 				</div>
+				<!-- pais usuario -->
 				<div class="row">
 					<div class="col s12 m12 l6 offset-l3">
 						<form:select path="pais" multiple="false">
@@ -100,24 +105,27 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="chips chips-autocomplete col s12 m12 l6 offset-l3">
-					</div>
-<!-- 					<div class="col s12 m12 l6 offset-l3"> -->
-<!-- 						<div class="chips chips-initial"> -->
-							<c:forEach items="${plataformas}" var="plataforma">
-<%-- 								<form:label for="${plataforma.nombre}" path="plataformas"> --%>
-									<div id="${plataforma.nombre}" class="plataformas" style="display: none">${plataforma.id}</div>
-<%-- 								</form:label> --%>
+					<div class="chips chips-initial chips-autocomplete col s12 m12 l6 offset-l3">
+						<c:if test="${edit}">
+							<c:forEach items="${nuevoUsuario.plataformas}" var="plataforma">
+								<div class="plataformas-usuario">
+									${plataforma.nombre}
+								</div>
 							</c:forEach>
-<!-- 						</div> -->
+						</c:if>
 					</div>
+					<c:forEach items="${plataformas}" var="plataforma">
+						<div id="${plataforma.nombre}" class="plataformas"
+							style="display: none">${plataforma.id}</div>
+					</c:forEach>
+				</div>
 
 				<!-- Imagen de usuario -->
-
 				<c:if test="${edit}">
 					<div class="row">
 						<div class="col s12 m8 offset-m2 l6 offset-l3">
 							<div class="row valign-wrapper">
+								<form:input path="id" type="hidden" />
 								<div class="col s6">
 									<img width="200px"
 										src="${pageContext.request.contextPath}${nuevoUsuario.foto}"
@@ -149,21 +157,29 @@
 						</div>
 					</div>
 				</div>
+				<!-- fecha alta -->
+				<c:if test="${edit}">
+					<div class="row">
+						<div class="input-field col s12 m12 l6 offset-l3">
+							<input type="text" disabled value="${nuevoUsuario.fechaAlta}" id="fechaAlta" class="validate">
+							<label for="fechaAlta">Fecha Alta</label>
+						</div>
+					</div>
+				</c:if>
 				<div class="row">
 					<div class="col s12 m12 l6 offset-l3">
 						<c:choose>
 							<c:when test="${edit}">
-								<button class="btn waves-effect waves-light" type="submit"
+								<button class="btn waves-effect waves-light botones"
 									name="action">
 									Actualizar <i class="material-icons right">send</i>
 								</button>
 							</c:when>
 							<c:otherwise>
-								<button id="boton" class="btn waves-effect waves-light" type="submit"
+								<button class="btn waves-effect waves-light botones"
 									name="action">
 									Registrarse <i class="material-icons right">send</i>
 								</button>
-
 							</c:otherwise>
 						</c:choose>
 					</div>
@@ -176,8 +192,10 @@
 	</footer>
 
 </body>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/materialize.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/usuario/registro.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/usuario/registro.js"></script>
 </body>
 </html>

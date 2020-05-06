@@ -18,3 +18,7 @@ label {
 .input-field input[type=text]:focus+label {
 	color: #000;
 }
+
+.input-field input[type="text"][disabled]{
+	color: #eeeeee;
+}

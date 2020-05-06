@@ -34,7 +34,7 @@ public class Usuario {
     @NotNull(message="La fecha es obligatoria")
     private Date fechaNacimiento;
     private String sexo;
-    @NotNull(message="La contraseña es obligatoria")
+    @NotBlank(message="La contraseña es obligatoria")
     private String password;
     private Rol rol;
     @NotNull(message="El pais es obligatoria")
@@ -118,7 +118,7 @@ public class Usuario {
 
     @Basic
     @Column(name = "FECHA_NACIMIENTO")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     public Date getFechaNacimiento() {
         return fechaNacimiento;
@@ -171,7 +171,7 @@ public class Usuario {
 	}
 	
 	@CreatedDate
-	@Column(name = "FECHA_ALTA")
+	@Column(name = "FECHA_ALTA", updatable = false)
 	//@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	public Date getFechaAlta() {
