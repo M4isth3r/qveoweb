@@ -99,54 +99,9 @@
 						</form:select>
 					</div>
 				</div>
+				
 				<!-- plataformas de usuario -->
-				<div class="row">
-					<div class="col s12 m12 l6 offset-l3">
-						<form:label path="plataformas">Plataformas</form:label>
-					</div>
-				</div>
-				<div class="row">
-					<!-- 					<div class="chips chips-initial chips-autocomplete col s12 m12 l6 offset-l3"> -->
-					<%-- 						<c:if test="${edit}"> --%>
-					<%-- 							<c:forEach items="${nuevoUsuario.plataformas}" var="plataforma"> --%>
-					<!-- 								<div class="plataformas-usuario"> -->
-					<%-- 									${plataforma.nombre} --%>
-					<!-- 								</div> -->
-					<%-- 							</c:forEach> --%>
-					<%-- 						</c:if> --%>
-					<!-- 					</div> -->
-					<%-- 					<c:forEach items="${plataformas}" var="plataforma"> --%>
-					<%-- 						<div id="${plataforma.nombre}" class="plataformas" --%>
-					<%-- 							style="display: none">${plataforma.id}</div> --%>
-					<%-- 					</c:forEach> --%>
-					<div id="chips"
-						class="chips chips-placeholder col s12 m12 l6 offset-l3"></div>
-					<div id="plataformas">
-						<c:choose>
-							<c:when test="${edit}">
-								<c:forEach items="${plataformas}" var="plataforma">
-									<c:choose>
-										<c:when
-											test="${fn:contains(nuevoUsuario.plataformas,plataforma)}">
-											<input class="${plataforma.nombre}" type="hidden"
-												name="plataformas" value="${plataforma.id}">
-										</c:when>
-										<c:otherwise>
-											<input class="${plataforma.nombre}" type="hidden"
-												name="plataformas" value="${plataforma.id}" disabled>
-										</c:otherwise>
-									</c:choose>
-								</c:forEach>
-							</c:when>
-							<c:otherwise>
-								<c:forEach items="${plataformas}" var="plataforma">
-									<input class="${plataforma.nombre}" type="hidden"
-										name="plataformas" value="${plataforma.id}" disabled>
-								</c:forEach>
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</div>
+				<%@include file="/WEB-INF/views/layout/chipsPlataforma.jsp" %>
 
 				<!-- Imagen de usuario -->
 				<c:if test="${edit}">
@@ -218,43 +173,11 @@
 	<footer class="page-footer">
 		<%@include file="/WEB-INF/views/layout/footer.jsp"%>
 	</footer>
-
 </body>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/materialize.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/usuario/registro.js"></script>
-	<script>
-	
-	let plataformas = $('input[name="plataformas"]');
-	let plataformasUsuario = $('input[name="plataformas"]:not(:disabled)');
-	
-	let tags = {};
-	for(let i=0; i<plataformas.length; i++){
-    	tags[plataformas[i].className] = null;           	
-    }
-	
-	let predefinidos = [];
-	for(let i=0; i<plataformasUsuario.length; i++){
-		predefinidos[i] = {tag: plataformasUsuario[i].className};
-	}
-	
-	 $('.chips').chips({
-         placeholder: 'Plataformas',
-         secondaryPlaceholder: '+otra',
-         autocompleteOptions: {
-        	 data: tags
-         },
-         onChipAdd: function(e, chip){
-             $("."+chip.textContent.replace('close','').replace(' ','.')).removeAttr('disabled');
-         },
-         onChipDelete: function(e, chip){
-        	 $("."+chip.textContent.replace('close','').replace(' ','.')).attr('disabled', 'disabled');
-         },
-         data: predefinidos,
-     });
-	
-	</script>
 </body>
 </html>

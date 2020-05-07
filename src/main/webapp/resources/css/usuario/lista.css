@@ -38,3 +38,11 @@
 .opciones{
 	margin: 0 !important;
 }
+
+.modal .contenido-ajax{
+	margin: 0;
+}
+
+.imagen-usuario img{
+	width: 100%;
+}
