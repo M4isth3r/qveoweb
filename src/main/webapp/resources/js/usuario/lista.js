@@ -1,30 +1,39 @@
 $(document).ready(function() {
 
 	$('.modal').modal();
-	
+	/*
 	$('.confirmar').modal({
 		onOpenStart: function(modal, trigger){
-			console.log(modal, trigger);
+			
 			let cajaOpciones = trigger.parentNode.parentNode;
 			let id = cajaOpciones.getAttribute('id');
-			console.log(id);
 			
 			$(".eliminar-usuario").click({param1: id, param2: cajaOpciones}, function(event) {
 				
-				console.log(event.data.param2.parentNode.parentNode);
 				event.data.param2.parentNode.parentNode.remove();
-				console.log(event.data.param1);
 				borrarUsuario(event.data.param1);
 
 			});
 			
 		}
 	});
-
+	*/
+	
+	$('.eliminar').click(function(event){
+		
+		if(confirm("¿Estás seguro/a?")){
+			
+			let cajaOpciones = event.target.parentNode.parentNode.parentNode;
+			let id = cajaOpciones.getAttribute('id');
+			console.log(id);
+			cajaOpciones.parentNode.parentNode.remove();
+			borrarUsuario(id);
+		}
+	});
+	
 	$(".mostrar-usuario").click(function(event) {
 
 		let id = event.target.parentNode.parentNode.parentNode.getAttribute('id');
-		console.log(event.target.parentNode.parentNode.parentNode.getAttribute('id'));
 		mostrarUsuario(id);
 
 	});
@@ -43,8 +52,6 @@ function mostrarUsuario(id) {
 				url : '/qveo/ajax/usuario/' + id,
 				success : function(data) {
 
-					console.log(data.foto);
-					//let rutaFoto = data.foto;
 					let contenido = document.getElementById('contenido');
 					let imgUsuario = document.getElementById('img-usuario');
 					let infoUsuario = document.getElementById('info-usuario');

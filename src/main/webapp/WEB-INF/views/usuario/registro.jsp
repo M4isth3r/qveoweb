@@ -130,8 +130,8 @@
 								<form:label path="foto">
 									<span>Imagen de perfil</span>
 								</form:label>
-								<input type="file" name="file" />
-								<form:errors path="foto" style="color:red"></form:errors>
+								<input type="file" name="file" required />
+								<form:errors path="foto" class="error"></form:errors>
 							</div>
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text"

@@ -35,13 +35,15 @@ public class UsuarioAjaxController {
 	
 	@RequestMapping(value = "/ajax/usuario/delete/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> deleteUser(@PathVariable("id") Integer id) {
-
+		
 		Usuario usuario = usuarioService.findById(id);
 		String rutaFoto = usuarioService.findById(id).getFoto();
 		String ruta = rutaFoto.substring(rutaFoto.lastIndexOf('/') + 1);
 		
-		usuarioService.deleteUser(id);
+
 		uploadFileService.delete(ruta, 6);
+		usuarioService.deleteUser(id);
+
 
 		return ResponseEntity.ok(usuario);
 

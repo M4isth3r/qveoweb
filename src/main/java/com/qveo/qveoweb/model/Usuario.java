@@ -5,6 +5,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -31,13 +32,14 @@ public class Usuario {
     @NotEmpty @Email(message="El email debe ser válido")
     private String email;
     private String foto;
-    @NotNull(message="La fecha es obligatoria")
+    @NotNull @Past(message="La fecha es obligatoria del pasado")
     private Date fechaNacimiento;
+    @NotNull
     private String sexo;
-    @NotBlank(message="La contraseña es obligatoria")
+    @Size(min=4, message="La contraseña es obligatoria, al menos 4 caracteres")
     private String password;
     private Rol rol;
-    @NotNull(message="El pais es obligatoria")
+    @NotNull
     private Pais pais;
     private Date fechaAlta;
 	private Collection<Plataforma> plataformas;

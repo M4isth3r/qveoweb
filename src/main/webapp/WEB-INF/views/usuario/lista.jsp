@@ -28,12 +28,12 @@
 	<main>
 		<div class="container">
 			<div class="row">
-				<div class="col s6 boton">
+				<div class="input-field col s12 m6 l6 boton">
 					<a href="/qveo/usuario/form"><i
 						class="waves-effect waves-light btn agregar-usuario">Nuevo
 							Usuario</i></a>
 				</div>
-				<div class="input-field col s6 boton">
+				<div class="input-field col s12 m6 l6">
 					<input id="usuario-nombre" type="text" class="validate"> <label
 						for="usuario-nombre">Introduzca un nombre de usuario</label>
 				</div>
@@ -58,7 +58,7 @@
 										class="material-icons editar">edit</i></a>
 								</div>
 								<div class="col s12 m6 l4">
-									<a href="#modal2" class="btn-floating btn-large modal-trigger"><i class="material-icons eliminar">delete</i></a>
+									<a href="#modal2" class="btn-floating btn-large red"><i class="material-icons eliminar">delete</i></a>
 								</div>
 							</div>
 						</div>

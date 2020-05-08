@@ -526,3 +526,7 @@ insert into `qveo`.`director_serie` values (8,25);
 insert into `qveo`.`director_serie` values (9,26);
 insert into `qveo`.`director_serie` values (10,27);
 insert into `qveo`.`director_serie` values (11,28);
+
+/* INSERTAMOS LOS ROLES */
+INSERT INTO qveo.rol (NOMBRE) VALUES('user');
+INSERT INTO qveo.rol (NOMBRE) VALUES('admin');
