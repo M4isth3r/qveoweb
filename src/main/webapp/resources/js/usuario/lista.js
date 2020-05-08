@@ -1,21 +1,31 @@
 $(document).ready(function() {
 
 	$('.modal').modal();
+	
+	$('.confirmar').modal({
+		onOpenStart: function(modal, trigger){
+			console.log(modal, trigger);
+			let cajaOpciones = trigger.parentNode.parentNode;
+			let id = cajaOpciones.getAttribute('id');
+			console.log(id);
+			
+			$(".eliminar-usuario").click({param1: id, param2: cajaOpciones}, function(event) {
+				
+				console.log(event.data.param2.parentNode.parentNode);
+				event.data.param2.parentNode.parentNode.remove();
+				console.log(event.data.param1);
+				borrarUsuario(event.data.param1);
+
+			});
+			
+		}
+	});
 
 	$(".mostrar-usuario").click(function(event) {
 
-		let id = event.target.parentNode.parentNode.getAttribute('id');
-		console.log(event.target.parentNode.parentNode.getAttribute('id'));
+		let id = event.target.parentNode.parentNode.parentNode.getAttribute('id');
+		console.log(event.target.parentNode.parentNode.parentNode.getAttribute('id'));
 		mostrarUsuario(id);
-
-	});
-
-	$(".eliminar-usuario").click(function(event) {
-
-		let id = event.target.parentNode.parentNode.getAttribute('id');
-		console.log(event.target.parentNode.parentNode.getAttribute('id'));
-		event.target.parentNode.parentNode.parentNode.parentNode.remove();
-		borrarUsuario(id);
 
 	});
 
@@ -97,7 +107,7 @@ function borrarUsuario(id) {
 		type : 'GET',
 		url : '/qveo/ajax/usuario/delete/' + id,
 		success : function(data) {
-
+			
 			console.log("SUCCESS : ", data);
 		},
 		error : function(e) {

@@ -12,8 +12,8 @@
 	href="${pageContext.request.contextPath}/resources/css/materialize.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/general.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/tabla.css">
+<!--  <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/tabla.css">-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/usuario/lista.css">
 <link rel="stylesheet"
@@ -50,27 +50,38 @@
 						<div class="col s4">
 							<div id="${usuario.id}" class="row opciones">
 								<div class="col s12 m3 l4">
-									<a class="modal-trigger mostrar-usuario material-icons"
-										href="#modal1">visibility</a>
+									<a class="btn-floating btn-large modal-trigger mostrar-usuario"
+										href="#modal1"><i class="material-icons">visibility</i></a>
 								</div>
 								<div class="col s12 m3 l4">
-									<a href="/qveo/usuario/edit/${usuario.id}"><i
+									<a href="/qveo/usuario/edit/${usuario.id}" class="btn-floating btn-large"><i
 										class="material-icons editar">edit</i></a>
 								</div>
 								<div class="col s12 m6 l4">
-									<a href="#" class="material-icons eliminar-usuario">delete</a>
+									<a href="#modal2" class="btn-floating btn-large modal-trigger"><i class="material-icons eliminar">delete</i></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</c:forEach>
-			<!-- Modal Structure -->
+			<!-- Modal datos usuario -->
 			<div id="modal1" class="modal">
 				<div id="contenido" class="modal-content contenido-ajax">
 					<div class="row">
 						<div id="img-usuario" class="col s12 m12 l5 imagen-usuario"><img src="${pageContext.request.contextPath}"></div>
 						<div id="info-usuario" class="col s12 m12 l7"></div>
 					</div>
+				</div>
+			</div>
+			<!-- Confirar elimianr usuario -->
+			<div id="modal2" class="modal confirmar">
+				<div class="modal-content">
+					<h4>Por favor debes confirmar</h4>
+					<p>¿Estás seguro de querer eliminar a este usuario?</p>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="waves-effect waves-green btn-flat modal-close">Cancelar</a>
+					<a href="#!" class="waves-effect waves-green btn-flat modal-close eliminar-usuario">Aceptar</a>
 				</div>
 			</div>
 		</div>
