@@ -3,6 +3,7 @@ package com.qveo.qveoweb.model;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @Entity
 public class Serie {
@@ -16,6 +17,7 @@ public class Serie {
     private Collection<Director> directores;
     private Collection<Genero> generos;
     private Pais pais;
+    private String poster;
     private Collection<Plataforma> plataformas;
     private Collection<Usuario> usuarios;
 
@@ -78,7 +80,16 @@ public class Serie {
     public void setCapitulos(Integer capitulos) {
         this.capitulos = capitulos;
     }
+    
+    @Basic
+    @Column(name = "POSTER")
+    public String getPoster() {
+        return poster;
+    }
 
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
 
     @ManyToMany
     @JoinTable(
@@ -155,4 +166,8 @@ public class Serie {
 	public void setUsuarios(Collection<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
+	
+    public String plataformasConcatenadas(){
+        return plataformas.stream().map(Plataforma::getNombre).collect(Collectors.joining(", "));
+    }
 }
