@@ -69,8 +69,4 @@ public class PeliculaPlataforma {
 		this.pelicula = pelicula;
 	}
 	
-	
-	
-	
-	
 }
