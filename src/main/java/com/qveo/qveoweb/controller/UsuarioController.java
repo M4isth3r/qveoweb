@@ -5,11 +5,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.InitBinder;
 
 import java.util.List;
 
@@ -22,6 +24,8 @@ import com.qveo.qveoweb.service.IUploadFileService;
 import com.qveo.qveoweb.service.PaisService;
 import com.qveo.qveoweb.service.PlataformaService;
 import com.qveo.qveoweb.service.UsuarioService;
+import com.qveo.qveoweb.validation.UsuarioValidator;
+
 import java.io.IOException;
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,13 +48,20 @@ public class UsuarioController {
 
 	@Autowired
 	private IUploadFileService uploadFileService;
+	
+	@Autowired
+	private UsuarioValidator validador;
+	
+	@InitBinder
+	public void InitBinder(WebDataBinder binder) {
+		binder.setValidator(validador);
+	}
 
 	@RequestMapping(value = "/usuario/list", method = RequestMethod.GET)
 	public String listarUsuarios(Model modelo) {
-
-		List<Usuario> usuarios = usuarioService.findAllUsuarios();
-
-		modelo.addAttribute("usuarios", usuarios);
+		
+		modelo.addAttribute("titulo", "Lista de usuarios");
+		modelo.addAttribute("usuarios", usuarioService.findAllUsuarios());
 
 		return "usuario/lista";
 	}
@@ -58,13 +69,10 @@ public class UsuarioController {
 	@RequestMapping(value = "/usuario/form", method = RequestMethod.GET)
 	public String mostrarFormulario(Model model) {
 		editar=false;
+		model.addAttribute("titulo", "Registro de Usuario");
 		model.addAttribute("nuevoUsuario", new Usuario());
-
-		List<Pais> paises = paisService.getAllPais();
-		model.addAttribute("paises", paises);
-
-		List<Plataforma> plataformas = plataformaService.getAllPlataformas();
-		model.addAttribute("plataformas", plataformas);
+		model.addAttribute("paises", paisService.getAllPais());
+		model.addAttribute("plataformas", plataformaService.getAllPlataformas());
 
 		return "usuario/registro";
 	}
@@ -75,13 +83,8 @@ public class UsuarioController {
 		try {
 			if (br.hasErrors()) {
 				model.addAttribute("nuevoUsuario", usuario);
-				
-				List<Pais> paises = paisService.getAllPais();
-				model.addAttribute("paises", paises);
-
-				List<Plataforma> plataformas = plataformaService.getAllPlataformas();
-				model.addAttribute("plataformas", plataformas);
-
+				model.addAttribute("paises", paisService.getAllPais());
+				model.addAttribute("plataformas", plataformaService.getAllPlataformas());
 				return "usuario/registro";
 			}
 
@@ -102,10 +105,19 @@ public class UsuarioController {
 				usuario.setFoto("/resources/img/usuarios/"+uniqueFilename);
 			}
 			
-			if(file.isEmpty() && editar) {
-				usuario.setFoto(usuarioService.findById(usuario.getId()).getFoto());
+			if(file.isEmpty()) {
+				if(editar) {
+					usuario.setFoto(usuarioService.findById(usuario.getId()).getFoto());
+					usuarioService.saveUser(usuario);
+					return "redirect:/usuario/list";
+				}
+				
+				model.addAttribute("paises", paisService.getAllPais());
+				model.addAttribute("plataformas", plataformaService.getAllPlataformas());
+				model.addAttribute("fotoerror", "Introduce una foto, por favor");
+				return "usuario/registro";
+				
 			}
-			
 			usuarioService.saveUser(usuario);
 
 		} catch (IOException e) {
@@ -121,15 +133,12 @@ public class UsuarioController {
 		
 		editar=true;
 		Usuario usuario = usuarioService.findById(id);
-		
-		List<Pais> paises = paisService.getAllPais();
-		model.addAttribute("paises", paises);
-
-		List<Plataforma> plataformas = plataformaService.getAllPlataformas();
-		model.addAttribute("plataformas", plataformas);
+		model.addAttribute("paises", paisService.getAllPais());
+		model.addAttribute("plataformas", plataformaService.getAllPlataformas());
 
 		modelo.addAttribute("nuevoUsuario", usuario);
 		modelo.addAttribute("edit", editar);
+		model.addAttribute("titulo", "Editar Usuario");
 		
 		return "usuario/registro";
 	}
