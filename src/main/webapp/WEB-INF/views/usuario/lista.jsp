@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>QVeo web</title>
+<title>${titulo}</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <link rel="stylesheet"
@@ -76,7 +76,7 @@
 			<!-- Confirar elimianr usuario -->
 			<div id="modal2" class="modal confirmar">
 				<div class="modal-content">
-					<h4>Por favor debes confirmar</h4>
+					<h3>Por favor debes confirmar</h3>
 					<p>¿Estás seguro de querer eliminar a este usuario?</p>
 				</div>
 				<div class="modal-footer">

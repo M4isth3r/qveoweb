@@ -1,24 +1,18 @@
 package com.qveo.qveoweb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.InitBinder;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
-import com.qveo.qveoweb.model.Pais;
-import com.qveo.qveoweb.model.Plataforma;
 import com.qveo.qveoweb.model.Usuario;
 import com.qveo.qveoweb.service.IUploadFileService;
 import com.qveo.qveoweb.service.PaisService;
@@ -29,7 +23,6 @@ import com.qveo.qveoweb.validation.UsuarioValidator;
 import java.io.IOException;
 
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
@@ -63,6 +56,9 @@ public class UsuarioController {
 		modelo.addAttribute("titulo", "Lista de usuarios");
 		modelo.addAttribute("usuarios", usuarioService.findAllUsuarios());
 
+		modelo.addAttribute("titulo", "Lista de usuarios");
+		modelo.addAttribute("usuarios", usuarioService.findAllUsuarios());
+
 		return "usuario/lista";
 	}
 
@@ -88,8 +84,6 @@ public class UsuarioController {
 				return "usuario/registro";
 			}
 
-			
-			
 			if (!file.isEmpty()) {
 				if(editar) {
 					
