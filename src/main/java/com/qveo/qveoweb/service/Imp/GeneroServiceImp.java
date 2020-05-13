@@ -15,9 +15,10 @@ public class GeneroServiceImp implements GeneroService{
 	@Autowired
 	GeneroDao generoDao;
 
+	
 	@Override
 	public List<Genero> getAllGenero() {
-		
+		// TODO Auto-generated method stub
 		return generoDao.findAll();
 	}
 	
