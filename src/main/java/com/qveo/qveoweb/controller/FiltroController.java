@@ -1,5 +1,6 @@
 package com.qveo.qveoweb.controller;
 
+import java.util.Collection;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,11 +11,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.qveo.qveoweb.dto.FiltroDto;
 import com.qveo.qveoweb.model.Genero;
 import com.qveo.qveoweb.model.Pelicula;
 import com.qveo.qveoweb.model.PeliculaPlataforma;
 import com.qveo.qveoweb.model.Plataforma;
 import com.qveo.qveoweb.model.Serie;
+import com.qveo.qveoweb.service.FiltroService;
 import com.qveo.qveoweb.service.GeneroService;
 import com.qveo.qveoweb.service.PeliculaPlataformaService;
 import com.qveo.qveoweb.service.PeliculaService;
@@ -38,6 +41,9 @@ public class FiltroController {
 
 	@Autowired
 	PeliculaPlataformaService peliPlataService;
+	
+	@Autowired
+	FiltroService filtroService;
 
 	/*
 	 * Get controller para series
@@ -45,7 +51,7 @@ public class FiltroController {
 	@GetMapping("/filtro1")
 	public String buscadorSerie(Model model) {
 
-		model.addAttribute("seriesBuscar", new Serie());
+		model.addAttribute("seriesBuscar", new FiltroDto());
 
 		List<Genero> generos = generoService.getAllGenero();
 
@@ -53,8 +59,8 @@ public class FiltroController {
 
 		List<Serie> series = serieService.findAllSerie();
 
-		List<Integer> fecha = serieService.buscarAllYears();
-
+		List<Integer> fecha = filtroService.buscarAllYears();
+		
 		model.addAttribute("fechas", fecha);
 		model.addAttribute("plataformas", plataformas);
 		model.addAttribute("serieMostrar", series);
@@ -68,18 +74,17 @@ public class FiltroController {
 	 * Post controler para series
 	 */
 	@PostMapping("/filtros")
-	public String filtrar(@ModelAttribute(name = "seriesBuscar") Serie serie,
-			@RequestParam(name = "years", required = false) Integer[] dates, Model model, BindingResult br) {
+	public String filtrar(@ModelAttribute(name = "seriesBuscar") FiltroDto filtro, Model model, BindingResult br) {
 
 		if (br.hasErrors()) {
 
-			model.addAttribute("seriesBuscar", new Serie());
+			model.addAttribute("seriesBuscar", filtro);
 
 			List<Genero> generos = generoService.getAllGenero();
 
 			List<Serie> series = serieService.findAllSerie();
 
-			List<Integer> fecha = serieService.buscarAllYears();
+			List<Integer> fecha = filtroService.buscarAllYears();
 
 			model.addAttribute("fechas", fecha);
 			model.addAttribute("serieMostrar", series);
@@ -88,111 +93,17 @@ public class FiltroController {
 
 			return "filtros/filtro";
 		}
+			
+		 //List<Serie> series =filtroService.busquedaCompletaSerie(filtro.getGeneros(),filtro.getPlataformas(), filtro.getAnios());
+		 
+		List<Pelicula> peli= filtroService.busquedaCompletaPelicula(filtro.getGeneros(), filtro.getAnios(),filtro.getPlataformas());
 		
-		/*Collection<Genero> genero=null;
-		if(serie.getGeneros().isEmpty()) {
-			genero=generoService.getAllGeneros();
-		}else {
-			genero=serie.getGeneros();
+		for(Pelicula pelisc:peli) {
+			System.out.println(pelisc.getTitulo()+" "+pelisc.getDuracion());
 		}
-		
-		Collection<Plataforma> plataforma=null;
-		
-		if(serie.getPlataformas().isEmpty()) {
-			plataforma=plataformaSerice.getAllPlataformas();
-		}else {
-			plataforma=serie.getPlataformas();
-		}
-		List<Integer> fecha = null;
-		if(dates == null) {
-			fecha=serieService.buscarAllYears();
-		}else {
-			fecha=dates;
-		}
-		
-		 List<Serie> series =serieService.busquedaCompletaSerie(genero,plataforma, fecha);*/
+		System.out.println("");
 		// model.addAttribute("series", series);
 		
-		/*if (!serie.getGeneros().isEmpty() && !serie.getPlataformas().isEmpty() && dates != null) {
-			/// --------->Filtrar completo
-			// List<Serie> series =serieService.busquedaCompletaSerie(serie.getGeneros(),
-			/// serie.getPlataformas(), dates);
-			// model.addAttribute("series", series);
-			model.addAttribute("cartel", "Entras si no esta vacio");
-		} else {
-
-			if (!serie.getGeneros().isEmpty() && dates != null && serie.getPlataformas().isEmpty()) {
-
-				// -------->Filtrar por años y generos
-				// List<Serie> series = serieService.busquedaGeneroYears(dates,
-				// serie.getGeneros());
-				// model.addAttribute("series", series);
-				model.addAttribute("cartel", "Entras si plataforma vacio");
-			} else if (!serie.getGeneros().isEmpty() && dates == null && !serie.getPlataformas().isEmpty()) {
-
-				// --------->Filtrar por plataforma y genero
-				// List<Serie> series
-				// =serieService.buscarGeneroPlataforma(serie.getPlataformas(),
-				// serie.getGeneros());
-				// model.addAttribute("series", series);
-				model.addAttribute("cartel", "Entras si fecha esta vacio");
-			} else if (serie.getGeneros().isEmpty() && dates != null && !serie.getPlataformas().isEmpty()) {
-
-				// --------->Filtrar por plataforma y años
-				// List<Serie> series
-				// =serieService.buscarPlataformaYears(serie.getPlataformas(), dates);
-				// model.addAttribute("series", series);
-				model.addAttribute("cartel", "Entras si genero esta vacio");
-			} else if (dates != null && serie.getGeneros().isEmpty() && serie.getPlataformas().isEmpty()) {
-				// ------->Filtrar por años
-				// List<Serie> series = serieService.buscarPorYear(dates);
-				// model.addAttribute("series", series);
-				model.addAttribute("cartel", "Entras si genero y plataforma esta vacio");
-			} else if (dates == null && !serie.getGeneros().isEmpty() && serie.getPlataformas().isEmpty()) {
-				// ----->Filtrar por genero
-				// List<Serie> series = serieService.buscarSerie(serie.getGeneros());
-				// model.addAttribute("series", series);
-				model.addAttribute("cartel", "Entras si fecha y plataforma esta vacio");
-			} else if (dates == null && serie.getGeneros().isEmpty() && !serie.getPlataformas().isEmpty()) {
-				// -------->Filtrar por plataforma
-				// List<Serie> series =serieService.buscarPlataforma(serie.getPlataformas());
-				// model.addAttribute("series", series);
-				model.addAttribute("cartel", "Entras si genero y fecha esta vacio");
-			} else {
-				return "redirect:/filtro1";
-			}
-
-		}*/
-
-		// ----->Filtrar por genero
-		// List<Serie> series = serieService.buscarSerie(serie.getGeneros());
-
-		// ------->Filtrar por años
-		// List<Serie> series = serieService.buscarPorYear(dates);
-
-		// -------->Filtrar por plataforma
-		// List<Serie> series =serieService.buscarPlataforma(serie.getPlataformas());
-
-		// -------->Filtrar por años y generos
-		// List<Serie> series = serieService.busquedaGeneroYears(dates,
-		// serie.getGeneros());
-
-		/// --------->Filtrar por plataforma y genero
-		// List<Serie> series
-		/// =serieService.buscarGeneroPlataforma(serie.getPlataformas(),
-		/// serie.getGeneros());
-
-		/// --------->Filtrar por plataforma y años
-		// List<Serie> series
-		/// =serieService.buscarPlataformaYears(serie.getPlataformas(), dates);
-
-		/// --------->Filtrar completo
-		// List<Serie> series =serieService.busquedaCompletaSerie(serie.getGeneros(),
-		/// serie.getPlataformas(), dates);
-
-		// model.addAttribute("series", series);
-		// model.addAttribute("cartel", "Entras");
-
 		return "filtros/filtrado";
 	}
 
@@ -202,16 +113,14 @@ public class FiltroController {
 	@GetMapping("/filtro2")
 	public String buscadorPeli(Model model) {
 
-		// model.addAttribute("peliculaBuscar", new Pelicula());
-		// List<Genero> generos = generoService.getAllGeneros();
-		List<Integer> fecha = peliculaService.buscarAllYears();
+		 model.addAttribute("peliculaBuscar", new Pelicula());
+		List<Genero> generos = generoService.getAllGenero();
 		List<Plataforma> plataformas = plataformaSerice.getAllPlataformas();
 		List<Pelicula> peliculas = peliculaService.findAll();
 
-		model.addAttribute("peliculaBuscar", new PeliculaPlataforma());
-		model.addAttribute("fechas", fecha);
+		//model.addAttribute("peliculaBuscar", new PeliculaPlataforma());
 		model.addAttribute("plataformas", plataformas);
-		// model.addAttribute("generos", generos);
+		model.addAttribute("generos", generos);
 		model.addAttribute("peliculaMostrar", peliculas);
 
 		return "filtros/filtro2";
@@ -221,25 +130,23 @@ public class FiltroController {
 	 * Post controler para series
 	 */
 	@PostMapping("/filtrosP")
-	public String filtrar(@ModelAttribute(name = "peliculaBuscar") PeliculaPlataforma peliculaPlataforma,
-			@RequestParam(name = "years", required = false) String[] dates, Model model, BindingResult br) {
-		/*
-		 * if (br.hasErrors()) {
-		 * 
-		 * model.addAttribute("peliculaBuscar", new Pelicula()); List<Genero> generos =
-		 * generoService.getAllGeneros(); List<Integer> fecha =
-		 * peliculaService.buscarAllYears(); model.addAttribute("fechas", fecha);
-		 * 
-		 * List<Plataforma> plataformas = plataformaSerice.getAllPlataformas();
-		 * 
-		 * model.addAttribute("plataformas", plataformas); model.addAttribute("generos",
-		 * generos);
-		 * 
-		 * List<Pelicula> peliculas = peliculaService.findAll();
-		 * model.addAttribute("peliculaMostrar", peliculas);
-		 * 
-		 * return "filtros/filtro"; }
-		 */
+	public String filtrar(@ModelAttribute(name = "peliculaBuscar") Pelicula pelicula,
+			@RequestParam(name = "years", required = false) List<Integer> dates,@RequestParam(name = "platafa", required = false) Collection<Plataforma> plataforma ,Model model, BindingResult br) {
+		
+		if (br.hasErrors()) {
+
+			List<Genero> generos = generoService.getAllGenero();
+			List<Plataforma> plataformas = plataformaSerice.getAllPlataformas();
+			List<Pelicula> peliculas = peliculaService.findAll();
+
+			model.addAttribute("peliculaBuscar", new PeliculaPlataforma());
+			model.addAttribute("plataformas", plataformas);
+			model.addAttribute("generos", generos);
+			model.addAttribute("peliculaMostrar", peliculas);
+
+			return "filtros/filtro2";
+		}
+		 
 		// System.out.println(pelicula.getPeliculaPlataformas().isEmpty());
 
 		// --->Filtro de pelicula por genero
@@ -247,7 +154,7 @@ public class FiltroController {
 		// peliculas=peliculaService.buscarPeliGenero(pelicula.getPeliculas());
 
 		// --->Filtro de pelicula por genero
-		//
+		//List<Pelicula>	peliculas=peliculaService.buscarPeliGeneroYears(peliculaPlataforma.getPelicula().getGeneros(), dates);
 
 		// --->Filtro de pelicula por genero y años
 		// List<Pelicula>
@@ -255,22 +162,20 @@ public class FiltroController {
 		// dates);
 
 		// -------->Filtrar por plataforma
-		// List<Pelicula> peliculas =
-		// peliculaService.buscarPeliPlataforma(pelicula.getPeliculaPlataformas());
-
-		//
+		// List<Pelicula> peliculas = peliculaService.buscarPeliPlataforma(peliculaPlataforma);
 
 		// List<Pelicula>
 		// peliculas=peliculaService.buscarPeliGenero(peliculaPlataforma.getPelicula().getGeneros());
-		List<Pelicula> peliculas = peliculaService.buscarPeliYears(dates);
-		if (peliculas.isEmpty()) {
+		//List<Pelicula> peliculas = peliculaService.buscarPeliYears(dates);
+		/*if (peliculas.isEmpty()) {
 			System.out.println("Lista vacia");
 		} else {
 			System.out.println("No esta vacia");
-		}
+		}*/
 		// model.addAttribute("peliculas", peliculas);
 
-		model.addAttribute("peliculas", peliculas);
+		//List<Pelicula> pelis=filtroService.busquedaCompletaPelicula(peliculaPlataforma.getPelicula().getGeneros(), dates);
+	
 		return "filtros/filtradoP";
 	}
 }

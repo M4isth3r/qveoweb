@@ -17,7 +17,7 @@ public class Pelicula {
     private String sinopsis;
     private Date anio;
     private Collection<Actor> actores;
-    private Collection<Genero> peliculas;
+    private Collection<Genero> generos;
     private Pais pais;
     private Collection<Director> directores;
     private Collection<Usuario> usuarios;
@@ -114,12 +114,12 @@ public class Pelicula {
             joinColumns = @JoinColumn(name = "id_pelicula", nullable = false),
             inverseJoinColumns = @JoinColumn(name="id_genero", nullable = false)
     )
-    public Collection<Genero> getPeliculas() {
-        return peliculas;
+    public Collection<Genero> getGeneros() {
+        return generos;
     }
 
-    public void setPeliculas(Collection<Genero> peliculas) {
-        this.peliculas = peliculas;
+    public void setGeneros(Collection<Genero> generos) {
+        this.generos = generos;
     }
 
     @ManyToOne
