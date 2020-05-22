@@ -14,10 +14,13 @@
                     </c:otherwise>
                 </c:choose>
 
-
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
                 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/general.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icon.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/actor/actor.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/modal.css">
             </head>
 
             <body>
@@ -42,7 +45,7 @@
                                     <form:label path="nombre">Nombre</form:label>
                                     <form:input path="nombre" id="nombre" class="validate" />
                                     <form:errors path="nombre" style="color:red"></form:errors>
-                                    <div style="color:red">${errorNombre}</div>
+                                    <div style="color: red">${errorNombre}</div>
                                 </div>
                                 <div class="col s2"></div>
                             </div>
@@ -79,7 +82,7 @@
                                         </c:choose>
                                     </form:select>
                                     <form:errors path="pais" style="color:red"></form:errors>
-                                    <div style="color:red">${errorPais}</div>
+                                    <div style="color: red">${errorPais}</div>
                                 </div>
                             </div>
                             <div class="row">
@@ -101,7 +104,7 @@
                                         <span>Femenino</span>
                                     </form:label>
                                     <form:errors path="sexo" style="color:red"></form:errors>
-                                    <div style="color:red">${errorSexo}</div>
+                                    <div style="color: red">${errorSexo}</div>
                                 </div>
                                 <div class="col s2"></div>
                             </div>
@@ -143,14 +146,11 @@
                 <footer>
                     <%@include file="/WEB-INF/views/layout/footer.jsp"%>
                 </footer>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        var elems = document.querySelectorAll('select');
-                        var instances = M.FormSelect.init(elems);
-                    });
-                </script>
+                <script src="${pageContext.request.contextPath}/resources/vendor/js/materialize.js"></script>
+                <script src="${pageContext.request.contextPath}/resources/vendor/js/jquery-3.4.1.min.js"></script>
+
+                <script src="${pageContext.request.contextPath}/resources/js/header.js"></script>
+                <script src="${pageContext.request.contextPath}/resources/js/actor/actor.js"></script>
 
             </body>
 
