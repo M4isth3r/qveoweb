@@ -1,0 +1,324 @@
+2020-04-01 21:09:40,603 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 11992 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:09:40,604 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:09:40,605 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:09:41,662 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:09:41,662 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:09:41,748 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:09:41,852 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:09:42,069 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:09:42,109 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:09:42,193 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:09:42,349 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:09:42,457 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:09:43,081 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:09:43,655 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 3.406 seconds (JVM running for 3.981)
+2020-04-01 21:10:47,703 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(11)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:10:47,711 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(11)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 21:12:17,343 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 17960 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:12:17,345 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:12:17,345 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:12:18,031 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:12:18,031 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:12:18,109 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:12:18,183 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:12:18,365 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:12:18,391 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:12:18,426 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:12:18,491 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:12:18,551 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:12:19,013 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:12:19,421 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.298 seconds (JVM running for 2.762)
+2020-04-01 21:13:04,260 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(11)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:13:04,267 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(11)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 21:15:10,596 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 4744 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:15:10,598 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:15:10,598 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:15:11,266 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:15:11,266 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:15:11,351 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:15:11,422 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:15:11,603 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:15:11,628 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:15:11,662 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:15:11,724 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:15:11,782 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:15:12,223 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:15:12,611 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.235 seconds (JVM running for 2.719)
+2020-04-01 21:15:53,391 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-4] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-01 21:18:41,709 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(16)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:18:41,718 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(16)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 21:20:08,338 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 22092 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:20:08,339 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:20:08,340 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:20:08,978 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:20:08,978 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:20:09,060 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:20:09,129 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:20:09,318 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:20:09,344 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:20:09,380 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:20:09,443 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:20:09,509 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:20:09,940 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:20:10,220 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.104 seconds (JVM running for 2.569)
+2020-04-01 21:20:17,246 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-01 21:20:17,309 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via GET
+2020-04-01 21:20:17,385 ERROR org.thymeleaf.TemplateEngine [http-nio-8080-exec-1] [THYMELEAF][http-nio-8080-exec-1] Exception processing template "index": Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-04-01 21:20:17,388 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo].[dispatcherServlet] [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [/qveo] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-04-01 21:23:12,664 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 22828 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:23:12,667 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:23:12,668 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:23:13,311 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:23:13,311 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:23:13,397 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:23:13,465 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:23:13,654 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:23:13,680 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:23:13,714 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:23:13,776 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:23:13,839 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:23:14,267 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:23:14,533 INFO org.apache.catalina.core.StandardService [main] Stopping service [Tomcat]
+2020-04-01 21:23:14,540 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-04-01 21:23:14,543 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:23:14,550 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2020-04-01 21:23:18,674 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:23:18,682 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 21:23:22,878 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 804 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:23:22,879 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:23:22,880 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:23:23,503 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:23:23,503 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:23:23,586 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:23:23,658 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:23:23,851 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:23:23,877 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:23:23,914 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:23:23,979 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:23:24,042 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:23:24,482 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:23:24,768 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.105 seconds (JVM running for 2.575)
+2020-04-01 21:23:29,910 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-01 21:23:29,957 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via GET
+2020-04-01 21:23:54,566 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-3] Executing home() method via GET
+2020-04-01 21:23:55,198 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-4] Executing home() method via GET
+2020-04-01 21:23:55,390 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-5] Executing home() method via GET
+2020-04-01 21:23:55,550 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via GET
+2020-04-01 21:24:40,887 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-8] Executing home() method via GET
+2020-04-01 21:24:42,390 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-9] Executing home() method via GET
+2020-04-01 21:24:43,105 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-10] Executing home() method via GET
+2020-04-01 21:24:43,334 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via GET
+2020-04-01 21:24:43,534 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-2] Executing home() method via GET
+2020-04-01 21:24:43,724 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-3] Executing home() method via GET
+2020-04-01 21:27:51,757 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via GET
+2020-04-01 21:27:52,429 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-7] Executing home() method via GET
+2020-04-01 21:27:53,157 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-8] Executing home() method via GET
+2020-04-01 21:27:53,413 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-9] Executing home() method via GET
+2020-04-01 21:27:53,624 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-10] Executing home() method via GET
+2020-04-01 21:27:53,822 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via GET
+2020-04-01 21:29:04,893 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-4] Executing home() method via GET
+2020-04-01 21:29:05,469 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-5] Executing home() method via GET
+2020-04-01 21:29:05,718 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via GET
+2020-04-01 21:29:05,908 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-7] Executing home() method via GET
+2020-04-01 21:29:15,020 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(17)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:29:15,028 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(17)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 21:31:36,707 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 21288 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:31:36,708 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:31:36,709 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:31:37,335 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:31:37,335 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:31:37,415 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:31:37,487 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:31:37,671 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:31:37,696 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:31:37,731 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:31:37,793 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:31:37,854 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:31:38,274 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:31:38,556 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.06 seconds (JVM running for 2.51)
+2020-04-01 21:31:41,720 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-01 21:31:41,766 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-2] Executing home() method via GET
+2020-04-01 21:33:24,221 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-5] Executing home() method via GET
+2020-04-01 21:33:24,781 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via GET
+2020-04-01 21:33:25,077 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-7] Executing home() method via GET
+2020-04-01 21:33:25,342 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-8] Executing home() method via GET
+2020-04-01 21:40:57,770 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via GET
+2020-04-01 21:40:58,309 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-2] Executing home() method via GET
+2020-04-01 21:41:17,983 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-3] Executing home() method via GET
+2020-04-01 21:41:18,318 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-5] Executing home() method via GET
+2020-04-01 21:41:18,564 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via GET
+2020-04-01 21:41:18,773 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-7] Executing home() method via GET
+2020-04-01 21:41:18,965 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-8] Executing home() method via GET
+2020-04-01 21:41:25,570 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(22)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:41:25,578 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(22)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 21:41:39,836 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 18360 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:41:39,838 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:41:39,839 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:41:40,468 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:41:40,468 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:41:40,553 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:41:40,622 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:41:40,807 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:41:40,833 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:41:40,870 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:41:40,934 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:41:40,994 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:41:41,425 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:41:41,705 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.081 seconds (JVM running for 2.552)
+2020-04-01 21:41:46,740 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-01 21:41:46,790 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via GET
+2020-04-01 21:41:47,141 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-2] Executing home() method via GET
+2020-04-01 21:41:57,428 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-4] Executing home() method via GET
+2020-04-01 21:41:58,027 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-5] Executing home() method via GET
+2020-04-01 21:41:58,268 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-6] Executing home() method via GET
+2020-04-01 21:41:58,491 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-7] Executing home() method via GET
+2020-04-01 21:42:09,896 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(11)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 21:42:09,905 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(11)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 21:42:18,980 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 18240 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 21:42:18,982 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 21:42:18,982 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 21:42:19,596 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 21:42:19,597 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 21:42:19,675 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 21:42:19,741 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 21:42:19,926 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 21:42:19,952 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 21:42:19,986 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 21:42:20,045 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 21:42:20,106 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 21:42:20,530 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 21:42:20,816 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.051 seconds (JVM running for 2.52)
+2020-04-01 21:42:22,034 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-01 21:42:22,082 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via GET
+2020-04-01 22:18:21,844 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(47)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 22:18:21,852 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(47)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-01 22:18:58,002 INFO com.qveo.qveoweb.QveowebApplication [main] Starting QveowebApplication on DESKTOP-E5B1MDF with PID 12736 (E:\Users\achra\Documents\Spring\QVeoWeb\target\classes started by achra in E:\Users\achra\Documents\Spring\QVeoWeb)
+2020-04-01 22:18:58,003 DEBUG com.qveo.qveoweb.QveowebApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-01 22:18:58,003 INFO com.qveo.qveoweb.QveowebApplication [main] No active profile set, falling back to default profiles: default
+2020-04-01 22:18:58,647 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2020-04-01 22:18:58,648 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-01 22:18:58,827 INFO org.apache.jasper.servlet.TldScanner [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-01 22:18:58,834 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [main] Initializing Spring embedded WebApplicationContext
+2020-04-01 22:18:58,901 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-01 22:18:59,085 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-01 22:18:59,110 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-01 22:18:59,145 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-01 22:18:59,204 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-01 22:18:59,265 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-04-01 22:18:59,724 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-01 22:19:00,017 INFO com.qveo.qveoweb.QveowebApplication [main] Started QveowebApplication in 2.229 seconds (JVM running for 2.691)
+2020-04-01 22:19:11,846 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/qveo] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-01 22:19:11,897 DEBUG com.qveo.qveoweb.controller.HomeController [http-nio-8080-exec-1] Executing home() method via Get
+2020-04-01 22:34:13,714 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(25)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-01 22:34:13,723 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(25)-127.0.0.1] HikariPool-1 - Shutdown completed.
