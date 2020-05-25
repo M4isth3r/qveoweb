@@ -2,13 +2,15 @@
 
 .carousel .carousel-item{
 	opacity: 1 !important;
+
 }
 
 h3 a:link, h3 a:visited {
   text-decoration: none;
-  color:222831; 
+  color:00adb5; 
 }
 
 .carousel .carousel-item img{
 	width: 100%;
+    display: inline;
 }

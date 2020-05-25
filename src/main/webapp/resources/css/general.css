@@ -1,16 +1,18 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
 main{
     padding-top: 10vh;
     background-color: #393e46;
- 	color: #00adb5;
 }
- 
+
 nav{
     position: fixed;
     background-color: #222831;
     color: #00adb5;
 }
 
-.footer{
+footer{
     background-color: #222831;
 }
 
@@ -19,4 +21,7 @@ nav{
     height: 307px;
 }
 
-
+.page-footer{
+    background-color: #222831 !important;
+    color: #00adb5 !important;
+}
