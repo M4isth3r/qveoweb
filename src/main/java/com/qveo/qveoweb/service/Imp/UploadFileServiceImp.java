@@ -69,11 +69,11 @@ public class UploadFileServiceImp implements UploadFileService {
 
 		switch (accion) {
 		case 1:
-			ruta = UPLOADS_FOLDER + "/peliculas";
+			ruta = UPLOADS_FOLDER + "/serie" ;
 			break;
 
 		case 2:
-			ruta = UPLOADS_FOLDER + "/serie";
+			ruta = UPLOADS_FOLDER + "/peliculas";
 			break;
 		case 3:
 			ruta = UPLOADS_FOLDER + "/actores";

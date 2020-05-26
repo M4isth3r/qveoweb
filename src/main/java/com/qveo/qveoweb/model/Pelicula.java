@@ -12,17 +12,35 @@ import java.util.stream.Collectors;
 public class Pelicula {
     private Integer id;
     private String titulo;
-    private Time duracion;
+    private String duracion;
     private String guion;
     private String poster;
     private String sinopsis;
     private Date anio;
     private Collection<Actor> actores;
-    private Collection<Genero> peliculas;
+    private Collection<Genero> generos;
     private Pais pais;
     private Collection<Director> directores;
     private Collection<Usuario> usuarios;
     private Set<PeliculaPlataforma> peliculaPlataformas = new HashSet<PeliculaPlataforma>();
+
+    public Pelicula() {
+    	
+    }
+
+    public Pelicula(String titulo, String duracion, String guion, String poster, String sinopsis, Date anio,
+			Collection<Actor> actores, Collection<Genero> generos, Pais pais, Collection<Director> directores) {
+		this.titulo = titulo;
+		this.duracion = duracion;
+		this.guion = guion;
+		this.poster = poster;
+		this.sinopsis = sinopsis;
+		this.anio = anio;
+		this.actores = actores;
+		this.generos = generos;
+		this.pais = pais;
+		this.directores = directores;
+	}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -115,13 +133,14 @@ public class Pelicula {
             joinColumns = @JoinColumn(name = "id_pelicula", nullable = false),
             inverseJoinColumns = @JoinColumn(name="id_genero", nullable = false)
     )
-    public Collection<Genero> getPeliculas() {
-        return peliculas;
+    public Collection<Genero> getGeneros() {
+        return generos;
     }
 
-    public void setPeliculas(Collection<Genero> peliculas) {
-        this.peliculas = peliculas;
+    public void setGeneros(Collection<Genero> generos) {
+        this.generos = generos;
     }
+
 
     @ManyToOne
     @JoinColumn(name = "ID_PAIS", referencedColumnName = "ID", nullable = false)
